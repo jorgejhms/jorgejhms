@@ -22,6 +22,10 @@
     --box-shadow: 0 0 10px #BD93F98C;
   }
 
+// Mixins
+
+@mixin tablet-plus { @media only screen and (min-width: 600px) { @content; }}
+
   body{
       background-color: var(--color-bg);
       color: var(--color-text);
@@ -30,7 +34,7 @@
 
   header {
     max-width: 25rem;
-    padding: 2rem;
+    padding: 1rem;
     min-height: 100%;
 }
 
