@@ -12,6 +12,7 @@
     "astro": "^0.24.0"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "sass": "^1.49.9"
   }
 }
