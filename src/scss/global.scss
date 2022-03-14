@@ -1,0 +1,39 @@
+:root {
+    /* Paleta Dracula */
+    --color-bg: #282A36;
+    --color-text: #F8F8F2;
+    --color-selection: #44475A;
+    --color-comment: #6272A4;
+    --color-red: #FF5555;
+    --color-orange: #FFB86C;
+    --color-yellow: #F1FA8C;
+    --color-green: #50FA7B;
+    --color-purple: #BD93F9;
+    --color-cyan: #8BE9FD;
+    --color-pink: #FF79C6;
+    --color-pre-bg: #100F17;
+    --color-header-bg: #414662;
+    --color-footer-bg: #0f0f0f;
+    --color-card-bg: #2f3140;
+    /* Tipografia */
+    --font-base: 'Fira Sans', sans-serif;
+    --font-header: 'JetBrains Mono', monospace;
+    /*Otras variables*/
+    --box-shadow: 0 0 10px #BD93F98C;
+  }
+
+  body{
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-base);
+  }
+
+  header {
+    max-width: 25rem;
+    padding: 2rem;
+    min-height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
