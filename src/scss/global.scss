@@ -1,43 +1,85 @@
 :root {
-    /* Paleta Dracula */
-    --color-bg: #282A36;
-    --color-text: #F8F8F2;
-    --color-selection: #44475A;
-    --color-comment: #6272A4;
-    --color-red: #FF5555;
-    --color-orange: #FFB86C;
-    --color-yellow: #F1FA8C;
-    --color-green: #50FA7B;
-    --color-purple: #BD93F9;
-    --color-cyan: #8BE9FD;
-    --color-pink: #FF79C6;
-    --color-pre-bg: #100F17;
-    --color-header-bg: #414662;
-    --color-footer-bg: #0f0f0f;
-    --color-card-bg: #2f3140;
-    /* Tipografia */
-    --font-base: 'Fira Sans', sans-serif;
-    --font-header: 'JetBrains Mono', monospace;
-    /*Otras variables*/
-    --box-shadow: 0 0 10px #BD93F98C;
-  }
+  /* Paleta Dracula */
+  --color-bg: #282a36;
+  --color-text: #f8f8f2;
+  --color-selection: #44475a;
+  --color-comment: #6272a4;
+  --color-red: #ff5555;
+  --color-orange: #ffb86c;
+  --color-yellow: #f1fa8c;
+  --color-green: #50fa7b;
+  --color-purple: #bd93f9;
+  --color-cyan: #8be9fd;
+  --color-pink: #ff79c6;
+  --color-pre-bg: #100f17;
+  --color-header-bg: #414662;
+  --color-footer-bg: #0f0f0f;
+  --color-card-bg: #2f3140;
+  /* Tipografia */
+  --font-base: "Fira Sans", sans-serif;
+  --font-header: "JetBrains Mono", monospace;
+  /*Otras variables*/
+  --box-shadow: 0 0 10px #bd93f98c;
+}
 
 // Mixins
 
-@mixin tablet-plus { @media only screen and (min-width: 600px) { @content; }}
-
-  body{
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-base);
+@mixin tablet-plus {
+  @media only screen and (min-width: 600px) {
+    @content;
   }
+}
 
-  header {
-    max-width: 25rem;
-    padding: 1rem;
-    min-height: 100%;
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-base);
+}
+
+header {
+  max-width: 25rem;
+  padding: 1rem;
+  min-height: 100%;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 1rem;
+  font-family: var(--font-header);
+  font-weight: 300;
+  color: cyan;
+
+  &::before {
+    content: "#";
+    position: relative;
+    left: -0.1em;
+  }
+}
+
+h4 {
+  font-weight: normal;
+}
+
+mark {
+  background-color: transparent;
+  color: var(--color-green);
+}
+
+a:link {
+  color: var(--color-orange);
+}
+
+a:visited {
+  color: var(--color-comment);
+}
+
+a:hover {
+  color: var(--color-yellow);
+}
+
+a:active {
+  color: var(--color-yellow);
 }
