@@ -1,4 +1,28 @@
 ---
-import Base from '../layouts/base.astro'
+import Base from "../layouts/base.astro";
+import Button from "../components/button.astro"
 ---
-<Base title="jorgejhms" description="Prueba"></Base>
+
+<Base title="jorgejhms" description="Prueba" />
+
+<div class="wrapper">
+<h2>¡Hola! Soy</h2>
+<h3 class="name">Jorge Meneses</h3>
+<h4>
+  y me encanta <mark>programar</mark> páginas web y <mark>analizar</mark> data.
+</h4>
+<Button>Contáctame</Button>
+</div>
+
+<style>
+  .name {
+    font-size: clamp(4rem, 1px + 10vw, 6.25rem);
+    color: var(--color-purple);
+    margin: 0.5em 0;
+  }
+
+  .wrapper {
+      
+      padding: 1rem;
+  }
+</style>
