@@ -9,6 +9,7 @@
   --color-yellow: #f1fa8c;
   --color-green: #50fa7b;
   --color-purple: #bd93f9;
+  --color-purple-dark: #a8a0b2;
   --color-cyan: #8be9fd;
   --color-pink: #ff79c6;
   --color-pre-bg: #100f17;
@@ -70,10 +71,11 @@ mark {
 
 a:link {
   color: var(--color-orange);
+  transition: all 0.2s ease-in-out;
 }
 
 a:visited {
-  color: var(--color-comment);
+  color: var(--color-purple-dark);
 }
 
 a:hover {
@@ -82,4 +84,23 @@ a:hover {
 
 a:active {
   color: var(--color-yellow);
+}
+
+figure{
+  overflow: hidden;
+}
+
+img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figcaption{
+  font-family: var(--font-header);
+  font-weight: 300;
+  font-size: 0.8rem;
+  text-align: center;
+  color:var(--color-purple-dark);
+  margin-top: 1em;
 }

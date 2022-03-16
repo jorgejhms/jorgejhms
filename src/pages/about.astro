@@ -3,3 +3,26 @@ import Base from "../layouts/base.astro";
 ---
 
 <Base title="acerca de mi | jorgejhms.net" description="Prueba" />
+
+<h2>acerca de mi</h2>
+
+<figure class="portrait">
+<img src="/public/media/2022/03/jorge_normal.webp" alt="Foto de Jorge Meneses" srcset="/public/media/2022/03/jorge_normal.webp 1x, /public/media/2022/03/jorge_retina.webp 2x">
+<figcaption>Posando en los exteriores de la Universidad de Potsdam (2018)</figcaption>
+</figure>
+
+<p>Mi nombre es Jorge Meneses. Soy <mark>sociólogo</mark> y Mg. en <mark>gestión pública</mark>. Ahora estoy aprendiendo <mark>desarrollo web</mark> y espero convertirme pronto en un desarrollador <mark>Full-Stack</mark>.</p>
+
+<p>Tengo experiencia en investigación social y en el análisis de datos.</p>
+
+<style lang="scss">
+.portrait{
+    max-width: 100%;
+
+    img{
+        border-radius: 50%;
+    }
+}
+
+
+</style>
