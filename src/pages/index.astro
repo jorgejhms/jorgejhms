@@ -1,18 +1,18 @@
 ---
 import Base from "../layouts/base.astro";
-import Button from "../components/button.astro"
+import Button from "../components/button.astro";
 ---
 
-<Base title="jorgejhms" description="Prueba" />
-
-<div class="wrapper">
-<h2>¡Hola! Soy</h2>
-<h3 class="name">Jorge Meneses</h3>
-<h4>
-  y me encanta <mark>programar</mark> páginas web y <mark>analizar</mark> data.
-</h4>
-<Button>Contáctame</Button>
-</div>
+<Base title="jorgejhms" description="Prueba">
+  <div class="wrapper">
+    <h2>¡Hola! Soy</h2>
+    <h3 class="name">Jorge Meneses</h3>
+    <h4>
+      y me encanta <mark>programar</mark> páginas web y <mark>analizar</mark> data.
+    </h4>
+    <Button>Contáctame</Button>
+  </div>
+</Base>
 
 <style>
   .name {
@@ -22,7 +22,6 @@ import Button from "../components/button.astro"
   }
 
   .wrapper {
-      
-      padding: 1rem;
+    padding: 1rem;
   }
 </style>
