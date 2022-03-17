@@ -41,6 +41,16 @@ header {
   max-width: 25rem;
   padding: 1rem;
   min-height: 100%;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-green);
+  z-index: 1;
+  transition: all 0.2 ease-in-out;
+}
+
+main {
+  padding: 1rem;
 }
 
 * {
@@ -51,12 +61,29 @@ h2 {
   font-size: 1rem;
   font-family: var(--font-header);
   font-weight: 300;
-  color: cyan;
+  color: var(--color-cyan);
 
   &::before {
-    content: "#";
+    content: "##";
     position: relative;
-    left: -0.1em;
+    left: -0.5em;
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
+}
+
+h3 {
+  font-size: 1rem;
+  font-family: var(--font-header);
+  font-weight: 300;
+  color: var(--color-purple);
+
+  &::before {
+    content: "###";
+    position: relative;
+    left: -0.5em;
+    font-size: 0.8rem;
+    opacity: 0.5;
   }
 }
 
@@ -88,12 +115,16 @@ a:active {
 
 figure{
   overflow: hidden;
+  margin: 0 auto;
 }
 
 img{
   display: block;
   width: 100%;
   height: auto;
+  object-fit: contain;
+  max-height: 100%;
+  margin: 0 auto;
 }
 
 figcaption{
@@ -103,4 +134,25 @@ figcaption{
   text-align: center;
   color:var(--color-purple-dark);
   margin-top: 1em;
+}
+
+.centered{
+  text-align: center;
+}
+
+footer{
+  font-size: 0.8rem;
+  width: 100%;
+  height: min-content;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  border-top: 1px solid var(--color-green);
+  z-index: 1;
+  background-color: var(--color-bg);
+  padding: 0.5em 0;
+
+  p {
+    margin: 0
+  }
 }

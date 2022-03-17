@@ -1,11 +1,7 @@
----
-// import '../scss/global.scss'
----
-
 <div class="header-wrapper">
   <div class="logo-wrapper">
-    <h1>jorgejhms</h1>
-    <h2>Sociólogo y desarrollador web</h2>
+    <h1 id="logo_title">jorgejhms</h1>
+    <h2 id="tagline">Sociólogo y desarrollador web</h2>
   </div>
 
   <i class="fa-solid fa-bars" id="mobile-menu-icon"></i>
@@ -60,6 +56,7 @@
     font-style: italic;
     font-size: clamp(2.2rem, 1px + 7vw, 3.12rem);
     margin: 0.2em 0;
+    transition: all 0.2s ease-in-out;
   }
 
   h2 {
