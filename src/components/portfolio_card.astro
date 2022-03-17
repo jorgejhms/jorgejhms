@@ -1,0 +1,18 @@
+---
+import Button from "./button.astro";
+---
+
+<article class="card">
+  <div class="tags">
+    <figure>
+      <img src="../public/media/img_fallback.png" alt="" />
+    </figure>
+    <h3>Titulo</h3>
+    <p class="meta">Fecha</p>
+    <p>
+      <slot />
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam et eos rerum eum quaerat iste fugit nisi odio quidem cupiditate.
+    </p>
+    <Button>Ver demo</Button>
+  </div>
+</article>
