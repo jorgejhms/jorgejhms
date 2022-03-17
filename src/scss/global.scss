@@ -31,10 +31,18 @@
   }
 }
 
+html{
+  // height: 100%;
+  // width: 100%;
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-base);
+  height: 100%;
+  width: 100%;
+  padding-bottom: 2rem;
 }
 
 header {
@@ -143,9 +151,9 @@ figcaption{
 footer{
   font-size: 0.8rem;
   width: 100%;
-  height: min-content;
+  // height: min-content;
   text-align: center;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   border-top: 1px solid var(--color-green);
   z-index: 1;
