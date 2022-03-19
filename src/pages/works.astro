@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/base.astro";
+import WorkCard from "../components/work_card.astro";
+---
+
+<Base title = "mi experiencia | jorgejhms" description="Prueba">
+<h2>mi experiencia</h2>
+<div class="work_grid">
+<WorkCard />
+</div>
+</Base>
+
+<style lang="scss">
+  .work_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+</style>

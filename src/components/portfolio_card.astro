@@ -1,11 +1,11 @@
 ---
 import Button from "./button.astro";
 const {
-  title,
-  date,
-  description,
-  tags,
-  link,
+  title = 'Título',
+  date = 'Fecha?',
+  description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis molestiae debitis quidem pariatur possimus consequuntur, soluta velit eos similique! Sapiente quas accusantium id fuga dignissimos?',
+  tags = ['?'],
+  link ='#',
   img = './public/media/img_fallback.png',
   alt = 'Imagen de demo'
   } = Astro.props;
@@ -25,6 +25,7 @@ const {
   </p>
   <Button><a href={link}>Ver demo</a></Button>
 </article>
+
 
 <style lang="scss">
   .card {
