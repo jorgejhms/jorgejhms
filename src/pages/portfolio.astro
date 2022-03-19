@@ -1,23 +1,35 @@
 ---
-// import Base from "../layouts/base.astro";
-import Portfolio from "../layouts/portfolio.astro";
+import Base from "../layouts/base.astro";
 import PortfolioCard from "../components/portfolio_card.astro";
 ---
 
-<Portfolio>
-  
-  <PortfolioCard
-    title="Artículo de prueba"
-    date="2022-03-11"
-    description="Esto es una prueba"
-    tags={["html", "css"]}
-  />
+<Base title="portafolio | jorgejhms" description="Prueba">
+  <h2>portafolio</h2>
+  <div class="portfolio">
+    <PortfolioCard
+      title="Artículo de prueba"
+      date="2022-03-11"
+      description="Esto es una prueba"
+      tags={["html", "css"]}
+      img="./public/media/2022/03/piano_player.webp"
+      link="#"
+    />
 
-  <PortfolioCard
-    title="Artículo de prueba 2"
-    date="2022-03-11"
-    description="Esto es una segunda prueba"
-    tags={["html", "css", "js"]}
-  />
-  
-</Portfolio>
+    <PortfolioCard
+      title="Artículo de prueba 2"
+      date="2022-03-11"
+      description="Esto es una segunda prueba"
+      tags={["html", "css", "js"]}
+      
+      link="#"
+    />
+  </div>
+</Base>
+
+<style lang="scss">
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+</style>
