@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/base.astro";
+// import PortfolioCard from "../components/portfolio_card.astro"
+---
+
+<Base title="portafolio | jorgejhms" description="Prueba">
+  <h2>portafolio</h2>
+  <div class="portfolio">
+    <slot />
+  </div>
+</Base>
+
+<style lang="scss">
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+</style>
