@@ -1,18 +1,66 @@
 ---
 import Button from "./button.astro";
+const {title, date, description, tags} = Astro.props;
 ---
 
 <article class="card">
   <div class="tags">
-    <figure>
-      <img src="../public/media/img_fallback.png" alt="" />
-    </figure>
-    <h3>Titulo</h3>
-    <p class="meta">Fecha</p>
-    <p>
-      <slot />
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam et eos rerum eum quaerat iste fugit nisi odio quidem cupiditate.
-    </p>
-    <Button>Ver demo</Button>
+    {tags.map(tag => <div class="tag">{tag}</div>)}
   </div>
+  <figure>
+    <img src="../public/media/img_fallback.png" alt="" />
+  </figure>
+  <h3>{title}</h3>
+  <p class="meta">{date}</p>
+  <p>
+    {description}
+  </p>
+  <Button>Ver demo</Button>
 </article>
+
+<style lang="scss">
+  .card {
+    background-color: #1d1e26;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 10px;
+
+    .tags{
+      margin: 0;
+      display: flex;
+      gap: 0.2em;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      color: #1d1e26;
+      background-color: var(--color-purple);
+      border-radius: 10px;
+      padding: 0.1em 0.7em;
+      display: inline-block;
+      margin: 0;
+    }
+
+    figure {
+      border-radius: 10px;
+      margin-top: 0.5rem;
+    }
+
+    h3 {
+      color: var(--color-green);
+      font-family: var(--font-base);
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 0;
+      &::before {
+        content: "";
+      }
+    }
+
+    .meta {
+      font-size: 0.7rem;
+      color: var(--color-cyan);
+      margin: 0;
+    }
+  }
+</style>
