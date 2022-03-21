@@ -1,4 +1,5 @@
 ---
+import Card from "../components/card.astro";
 const {
     position = 'Posición?',
     workplace = 'Empresa?',
@@ -7,18 +8,18 @@ const {
     tags = ['?'],
     description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis molestiae debitis quidem pariatur possimus consequuntur, soluta velit eos similique! Sapiente quas accusantium id fuga dignissimos?'
 } = Astro.props;
+
+date = start_date + " - " + end_date
 ---
 
-<article class="card">
-    <div class="tags">
-    {tags.map(tag => <div class="tag">{tag}</div>)}
-    </div>
-    <h3>{position}</h3>
-    <h4>{workplace}</h4>
-    <p class="meta">{start_date} - {end_date}</p>
-    <p>{description}</p>
-</article>
+<Card title={position} {tags} {date} {description}>
+<p class="workplace" slot="subtitle">{workplace}</p>
+</Card>
 
 <style lang="scss">
-
+.workplace{
+    font-family: var(--font-header);
+    color: var(--color-purple);
+    font-weight: 900;
+}
 </style>
