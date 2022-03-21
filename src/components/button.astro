@@ -1,8 +1,12 @@
+---
+const { href } = Astro.props;
+---
+
 <button>
-  <slot />
+  <a {href}><slot /></a>
 </button>
 
-<style>
+<style lang="scss">
   button {
     background-color: var(--color-purple);
     border: 0;
@@ -11,5 +15,10 @@
     font-weight: bold;
     cursor: pointer;
     font-family: var(--font-header);
+
+    a {
+      color: var(--color-bg);
+      text-decoration: none;
+    }
   }
 </style>

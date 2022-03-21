@@ -16,7 +16,7 @@ const {
   <figure slot="image">
     <img src={img} {alt} />
   </figure>
-  <Button><a href={link}>Ver demo</a></Button>
+  <Button href={link}>Ver demo</Button>
 </Card>
 
 <style lang="scss">
@@ -35,10 +35,5 @@ const {
       object-fit: cover; // ajusta imagen al ancho
       object-position: 0% 0%;
     }
-  }
-
-  a {
-    color: var(--color-bg);
-    text-decoration: none;
   }
 </style>
