@@ -54,12 +54,66 @@
     "description": "Moderación de entrevistas y realización de talleres de cocreación con funcionarios públicos"
   },
   {
+    "position": "Desarrollador Web",
+    "workplace": "Fabrica de Ideas",
+    "start_date": "2021-02-01",
+    "end_date": "2021-04-31",
+    "tags": ["WebDev"],
+    "url": "http://apacheta.pe/",
+    "description": "Desarrollo y diseño de la página web Apacheta.pe"
+  },
+  {
+    "position": "Investigador",
+    "workplace": "CooperAcción",
+    "start_date": "2020-12-01",
+    "end_date": "2021-02-28",
+    "tags": ["Consultoría", "Sociología", "Energías Renovables", "Cambio Climático", "Pueblos Indígenas"],
+    "url": "http://www.reactivacionsostenible.lat/wp-content/uploads/2021/12/final-1.pdf",
+    "description": "Investigación para la publicación ”Vale la pena la extracción de petróleo en el Perú”."
+  },
+  {
     "position": "Analista de Datos",
     "workplace": "QR Consulting",
-    "start_date": "2021-09-01",
+    "start_date": "2020-06-01",
     "end_date": "2021-11-30",
-    "tags": ["Consultoría", "Sociología", "Análisis de Datos"],
+    "tags": ["Consultoría", "Sociología", "R"],
     "url": "https://qrconsultingperu.com/",
-    "description": "Investigación y redacción sobre la migración venezolana en Perú y Ecuador."
+    "description": "Procesamiento de datos, elaboración de instrumentos de medición, análisis de informes y realización de talleres."
+  },
+  {
+    "position": "Asistente Académico",
+    "workplace": "Universidad de Potsdam - ZfQ",
+    "start_date": "2019-05-01",
+    "end_date": "2019-12-31",
+    "tags": ["Educación Superior"],
+    "url": "https://www.uni-potsdam.de/de/zfq/",
+    "description": "Organización de talleres y eventos para los proyectos ASEAN-QA y National Multiplication Network (NMT)."
+  },
+  {
+    "position": "Asistente Académico",
+    "workplace": "Universidad de Potsdam - ZfQ",
+    "start_date": "2018-07-01",
+    "end_date": "2018-12-31",
+    "tags": ["Educación Superior"],
+    "url": "https://www.uni-potsdam.de/de/zfq/",
+    "description": "Organización de talleres y eventos para los proyectos ASEAN-QA y National Multiplication Network (NMT)."
+  },
+  {
+    "position": "Asistente de la Coordinación Ambiental",
+    "workplace": "Pontificia Universidad Católica del Perú - DARS",
+    "start_date": "2016-08-01",
+    "end_date": "2017-08-30",
+    "tags": ["Educación Superior", "Cambio Climático", "Responsabilidad Social"],
+    "url": "https://dars.pucp.edu.pe/",
+    "description": "Mejora del diseño e implementación de los proyectos Oficina Verde y Campus Sostenible."
+  },
+  {
+    "position": "Coordinador Ejecutivo",
+    "workplace": "Movimiento Ciudadano Frente al Cambio Climático",
+    "start_date": "2013-10-01",
+    "end_date": "2016-08-30",
+    "tags": ["Cambio Climático", "Incidencia Pública"],
+    "url": "https://mocicc.org/",
+    "description": "Diseño y coordinación de proyectos, planeamiento y gestión interna. Participación como representante de la sociedad civil en la COP 20 y COP 21, y enla Comisión Nacional sobre Cambio Climático."
   }
 ]
