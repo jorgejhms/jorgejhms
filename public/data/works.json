@@ -109,7 +109,7 @@
   },
   {
     "position": "Coordinador Ejecutivo",
-    "workplace": "Movimiento Ciudadano Frente al Cambio Climático",
+    "workplace": "Movimiento Ciudadano Frente al Cambio Climático (MOCICC)",
     "start_date": "2013-10-01",
     "end_date": "2016-08-30",
     "tags": ["Cambio Climático", "Incidencia Pública"],
@@ -124,5 +124,77 @@
     "tags": ["Educación Superior", "Estadística"],
     "url": "https://facultad.pucp.edu.pe/gestion-direccion/",
     "description": "Curso ”Análisis cuantitativo” orientado a estudiantes de la Facultad de Gestión y Alta Dirección."
+  },
+  {
+    "position": "Asistente de Investigación",
+    "workplace": "Autoridad Nacional del Servicio Civil (SERVIR)",
+    "start_date": "2013-08-01",
+    "end_date": "2013-09-30",
+    "tags": ["Consultoría"],
+    "url": "https://www.gob.pe/servir",
+    "description": "Recojo y sistematización de información de puestos y funciones en entidades públicas."
+  },
+  {
+    "position": "Asistente de Investigación",
+    "workplace": "Ministerio de Educación (MINEDU)",
+    "start_date": "2013-05-01",
+    "end_date": "2013-06-30",
+    "tags": ["Consultoría"],
+    "url": "https://www.gob.pe/minedu",
+    "description": "Consultoría para la sistematización y análisis de la autoevaluación de docentes rurales."
+  },
+  {
+    "position": "Gestor de Redes Sociales",
+    "workplace": "Municipalidad Metropolitana de Lima (MML)",
+    "start_date": "2012-07-01",
+    "end_date": "2013-01-31",
+    "tags": ["Comunicación Política", "Redes Sociales"],
+    "url": "https://www.munlima.gob.pe/",
+    "description": "Durante este periodo se logró institucionalizar la gestión de redes sociales en la Municipalidad de Lima, generando articulación con los ciudadanos."
+  },
+  {
+    "position": "Miembro del Comité Editorial",
+    "workplace": "Revista La Toma",
+    "start_date": "2012-08-01",
+    "end_date": "2012-12-31",
+    "tags": ["Comunicación Política", "Redacción"],
+    "url": "",
+    "description": "Revista mensual enfocada en temas estudiantiles en Perú."
+  },
+  {
+    "position": "Asistente de Investigación",
+    "workplace": "Ministerio de Educación (MINEDU)",
+    "start_date": "2012-04-01",
+    "end_date": "2012-05-30",
+    "tags": ["Consultoría"],
+    "url": "https://www.gob.pe/minedu",
+    "description": "Recopilación y sistematización de evidencias para el diseño del Programa Presupuestal con enfoque de resultados para Educación Superior. Se identificaron indicadores de desempeño a usar como línea de base del programa presupuestal."
+  },
+  {
+    "position": "Gestor de Redes Sociales",
+    "workplace": "Congreso de la República del Perú",
+    "start_date": "2011-09-01",
+    "end_date": "2011-12-31",
+    "tags": ["Comunicación Política", "Redes Sociales"],
+    "url": "https://www.congreso.gob.pe/",
+    "description": "Durante el periodo se institucionalizó la gestión de redes sociales del Congreso de la República."
+  },
+  {
+    "position": "Coordinador de Proyecto",
+    "workplace": "Centro de Estudios y Promoción del Desarrollo (DESCO)",
+    "start_date": "2010-02-01",
+    "end_date": "2011-08-30",
+    "tags": ["Sociología", "Estadística"],
+    "url": "https://www.congreso.gob.pe/",
+    "description": "Proyecto piloto para la implementación de un Sistema de Monitoreo Comunitario para presupuestos con Enfoque de Género en Villa el Salvador. En colaboración con ONU mujeres."
+  },
+  {
+    "position": "Redactor",
+    "workplace": "Forum Solidaridad Perú",
+    "start_date": "2009-05-01",
+    "end_date": "2010-02-01",
+    "tags": ["Redacción"],
+    "url": "http://www.psf.org.pe/institucional/",
+    "description": "Equipo de Proyección Institucional. Redacción e investigación para el sistema de comunicación alternativa Alerta Perú."
   }
 ]
