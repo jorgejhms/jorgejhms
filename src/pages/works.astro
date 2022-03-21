@@ -1,13 +1,27 @@
 ---
 import Base from "../layouts/base.astro";
 import WorkCard from "../components/work_card.astro";
+
+import data from "../../public/data/works.json";
 ---
 
-<Base title = "mi experiencia | jorgejhms" description="Prueba">
-<h2>mi experiencia</h2>
-<div class="work_grid">
-<WorkCard />
-</div>
+<Base title="mi experiencia | jorgejhms" description="Prueba">
+  <h2>mi experiencia</h2>
+  <div class="work_grid">
+    
+
+    {
+  data.map( work => <WorkCard
+   position={work.position}
+   workplace={work.workplace}
+   start_date={work.start_date}
+   end_date={work.end_date}
+   url = {work.url}
+   tags = {work.tags}
+   description = {work.description}
+   />)
+}
+  </div>
 </Base>
 
 <style lang="scss">

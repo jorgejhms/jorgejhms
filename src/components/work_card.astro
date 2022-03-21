@@ -1,25 +1,35 @@
 ---
 import Card from "../components/card.astro";
 const {
-    position = 'Posición?',
-    workplace = 'Empresa?',
-    start_date = 'Fecha?',
-    end_date = 'Fecha?',
-    tags = ['?'],
-    description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis molestiae debitis quidem pariatur possimus consequuntur, soluta velit eos similique! Sapiente quas accusantium id fuga dignissimos?'
+  position = "Posición?",
+  workplace = "Empresa?",
+  start_date = "Fecha?",
+  end_date = "Fecha?",
+  url = "#",
+  tags = ["?"],
+  description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis molestiae debitis quidem pariatur possimus consequuntur, soluta velit eos similique! Sapiente quas accusantium id fuga dignissimos?",
 } = Astro.props;
 
-date = start_date + " - " + end_date
+date = start_date + " - " + end_date;
 ---
 
 <Card title={position} {tags} {date} {description}>
-<p class="workplace" slot="subtitle">{workplace}</p>
+  <p class="workplace" slot="subtitle"><a href={url}>{workplace}</a></p>
 </Card>
 
 <style lang="scss">
-.workplace{
+  .workplace {
     font-family: var(--font-header);
-    color: var(--color-purple);
+
     font-weight: 900;
-}
+
+    a {
+      color: var(--color-purple);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 </style>
