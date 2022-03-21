@@ -9,7 +9,7 @@
     "description": "Cofundador de Oddity Webs. Diseño y programación web en Wordpres y otras plataformas"
   },
   {
-    "position": "Evaluador de Proyeto",
+    "position": "Evaluador de Proyecto",
     "workplace": "Ccaijo",
     "start_date": "2022-03-14",
     "end_date": "Presente",
@@ -115,5 +115,14 @@
     "tags": ["Cambio Climático", "Incidencia Pública"],
     "url": "https://mocicc.org/",
     "description": "Diseño y coordinación de proyectos, planeamiento y gestión interna. Participación como representante de la sociedad civil en la COP 20 y COP 21, y enla Comisión Nacional sobre Cambio Climático."
+  },
+  {
+    "position": "Jefe de Prácticas",
+    "workplace": "Pontificia Universidad Católica del Perú - Facultad de Gestión y Alta Dirección",
+    "start_date": "2015-08-01",
+    "end_date": "2015-12-31",
+    "tags": ["Educación Superior", "Estadística"],
+    "url": "https://facultad.pucp.edu.pe/gestion-direccion/",
+    "description": "Curso ”Análisis cuantitativo” orientado a estudiantes de la Facultad de Gestión y Alta Dirección."
   }
 ]
