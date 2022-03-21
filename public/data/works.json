@@ -1,18 +1,65 @@
-[{
+[
+  {
     "position": "Programador web y cofundador",
     "workplace": "Oddity Webs",
-    "start_date" : "2020-06-01",
-    "end_date" : "Presente",
-    "tags" : ["WebDev", "Wordpress"],
-    "url" : "https://odditywebs.com/",
-    "description" : "Cofundador de Oddity Webs. Diseño y programación web en Wordpres y otras plataformas"
-},
-{
-    "position": "Programador web y cofundador",
-    "workplace": "Oddity Webs",
-    "start_date" : "2020-06-01",
-    "end_date" : "Presente",
-    "tags" : ["WebDev", "Wordpress"],
-    "url" : "https://odditywebs.com/",
-    "description" : "Cofundador de Oddity Webs. Diseño y programación web en Wordpres y otras plataformas"
-}]
+    "start_date": "2020-06-01",
+    "end_date": "Presente",
+    "tags": ["WebDev", "Wordpress"],
+    "url": "https://odditywebs.com/",
+    "description": "Cofundador de Oddity Webs. Diseño y programación web en Wordpres y otras plataformas"
+  },
+  {
+    "position": "Evaluador de Proyeto",
+    "workplace": "Ccaijo",
+    "start_date": "2022-03-14",
+    "end_date": "Presente",
+    "tags": ["Consultoría", "Sociología"],
+    "url": "http://ccaijo.org.pe/",
+    "description": "Evaluación de proyecto de empoderamiento de las mujeres en Quispicanchi, Cusco."
+  },
+  {
+    "position": "Analista de Datos",
+    "workplace": "QR Consulting",
+    "start_date": "2021-09-01",
+    "end_date": "2021-11-30",
+    "tags": ["Consultoría", "Sociología", "Análisis de Datos"],
+    "url": "https://qrconsultingperu.com/",
+    "description": "Investigación y redacción sobre la migración venezolana en Perú y Ecuador."
+  },
+  {
+    "position": "Analista de Datos",
+    "workplace": "DAR",
+    "start_date": "2021-06-01",
+    "end_date": "2021-12-31",
+    "tags": ["Consultoría", "Sociología", "Análisis de Datos", "R"],
+    "url": "https://dar.org.pe/",
+    "description": "Limpieza, ordenamiento y análisis de base de datos para el proyecto ”Promoviendo Infraestructura Sostenible en Loreto"
+  },
+  {
+    "position": "Investigación y redacción",
+    "workplace": "DerechosEnEmergencia - Cooperacción",
+    "start_date": "2021-03-01",
+    "end_date": "2021-12-31",
+    "tags": ["Consultoría", "Redacción"],
+    "url": "https://derechosenemergencia.dhperu.org/",
+    "description": "Elaboración reporte semanal ”Derechos en Emergencia"
+  },
+  {
+    "position": "Investigador",
+    "workplace": "adthropologist",
+    "start_date": "2021-04-01",
+    "end_date": "2021-04-31",
+    "tags": ["Consultoría", "Sociología"],
+    "url": "https://adthropologist.com/",
+    "description": "Moderación de entrevistas y realización de talleres de cocreación con funcionarios públicos"
+  },
+  {
+    "position": "Analista de Datos",
+    "workplace": "QR Consulting",
+    "start_date": "2021-09-01",
+    "end_date": "2021-11-30",
+    "tags": ["Consultoría", "Sociología", "Análisis de Datos"],
+    "url": "https://qrconsultingperu.com/",
+    "description": "Investigación y redacción sobre la migración venezolana en Perú y Ecuador."
+  }
+]
