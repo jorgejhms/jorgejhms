@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/base.astro";
+// import "../scss/global.scss";
 import WorkCard from "../components/work_card.astro";
 import data from "../../public/data/works.json";
 ---
@@ -28,5 +29,14 @@ import data from "../../public/data/works.json";
     flex-direction: column;
     gap: 1em;
     
+    @media only screen and (min-width: 600px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
+      // max-width: 60rem;
+      // flex-direction: row;
+      // flex: wrap;
+      // flex-shrink: 0;
+    }
+
   }
 </style>
