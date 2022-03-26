@@ -1,3 +1,13 @@
+---
+const menu = [
+  { url: "/", text: "01. inicio" },
+  { url: "/about", text: "02. acerca de mi" },
+  { url: '/portfolio', text: '03. portafolio'},
+  { url: '/works', text: '04. mi experiencia'},
+  { url: '#', text: '05. blog'},
+  { url: '#', text: '06. contáctame'}
+];
+---
 <div class="header-wrapper">
   <div class="logo-wrapper">
     <h1 id="logo_title">jorgejhms</h1>
@@ -12,24 +22,18 @@
 
   <nav>
     <ul id="mobile-menu">
-      <li><a href="/">01. inicio</a></li>
-      <li><a href="/about">02. acerca de mi</a></li>
-      <li><a href="/portfolio">03. portafolio</a></li>
-      <li><a href="/works">04. mi experiencia</a></li>
-      <li>05. blog</li>
-      <li>06. contácteme</li>
+      {menu.map(item =>
+        <li><a href="{item.url}">{item.text}</a></li>
+      )}
     </ul>
   </nav>
 </div>
 
 <nav>
   <ul id="desktop-menu">
-    <li>01. inicio</li>
-    <li>02. acerca de mi</li>
-    <li>03. portafolio</li>
-    <li>04. mi experiencia</li>
-    <li>05. blog</li>
-    <li>06. contácteme</li>
+  {menu.map(item =>
+        <li><a href="{item.url}">{item.text}</a></li>
+      )}
   </ul>
 </nav>
 
@@ -48,8 +52,6 @@
 </script>
 
 <style lang="scss">
-
-
   @use "../scss/_mixins" as mixin;
 
   h1 {
