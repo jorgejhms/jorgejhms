@@ -1,4 +1,4 @@
-@use "mixins";
+@use "../scss/_mixins" as mixin;
 
 :root {
   /* Paleta Dracula */
@@ -26,11 +26,6 @@
   
 }
 
-html{
-  // height: 100%;
-  // width: 100%;
-}
-
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -49,6 +44,7 @@ h2 {
   font-family: var(--font-header);
   font-weight: 300;
   color: var(--color-cyan);
+  // margin-top: 2%;
 
   &::before {
     content: "##";
@@ -64,6 +60,7 @@ h3 {
   font-family: var(--font-header);
   font-weight: 300;
   color: var(--color-purple);
+  margin-top: 5%;
 
   &::before {
     content: "###";
@@ -123,6 +120,9 @@ figcaption{
   margin-top: 1em;
 }
 
+// Utilities
+
 .centered{
   text-align: center;
 }
+

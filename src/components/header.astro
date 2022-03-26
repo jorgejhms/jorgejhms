@@ -23,7 +23,7 @@ const menu = [
   <nav>
     <ul id="mobile-menu">
       {menu.map(item =>
-        <li><a href="{item.url}">{item.text}</a></li>
+        <li><a href={item.url}>{item.text}</a></li>
       )}
     </ul>
   </nav>
@@ -32,7 +32,7 @@ const menu = [
 <nav>
   <ul id="desktop-menu">
   {menu.map(item =>
-        <li><a href="{item.url}">{item.text}</a></li>
+        <li><a href={item.url}>{item.text}</a></li>
       )}
   </ul>
 </nav>
@@ -131,17 +131,14 @@ const menu = [
 
   #desktop-menu {
     display: none;
-
-    ul {
-      font-size: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
+    font-size: 1.25rem;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 50%;
 
     @include mixin.tablet-plus() {
       & {
-        display: block;
+        display: flex;
       }
     }
   }

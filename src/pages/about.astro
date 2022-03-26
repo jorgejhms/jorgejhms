@@ -4,33 +4,37 @@ import Base from "../layouts/base.astro";
 
 <Base title="acerca de mi | jorgejhms.net" description="Prueba">
   <h2>acerca de mi</h2>
+  <div class="columns-2">
+    <figure class="portrait">
+      <img
+        src="/public/media/2022/03/jorge_normal.webp"
+        alt="Foto de Jorge Meneses"
+        srcset="/public/media/2022/03/jorge_normal.webp 1x, /public/media/2022/03/jorge_retina.webp 2x"
+      />
+      <figcaption>
+        Posando en los exteriores de la Universidad de Potsdam (2018)
+      </figcaption>
+    </figure>
+    <div>
+    <p>
+      Mi nombre es Jorge Meneses. Soy <mark>sociólogo</mark> y Mg. en <mark
+        >gestión pública</mark
+      >. Ahora estoy aprendiendo <mark>desarrollo web</mark> y espero convertirme
+      pronto en un desarrollador <mark>Full-Stack</mark>.
+    </p>
 
-  <figure class="portrait">
-    <img
-      src="/public/media/2022/03/jorge_normal.webp"
-      alt="Foto de Jorge Meneses"
-      srcset="/public/media/2022/03/jorge_normal.webp 1x, /public/media/2022/03/jorge_retina.webp 2x"
-    />
-    <figcaption>
-      Posando en los exteriores de la Universidad de Potsdam (2018)
-    </figcaption>
-  </figure>
-
-  <p>
-    Mi nombre es Jorge Meneses. Soy <mark>sociólogo</mark> y Mg. en <mark
-      >gestión pública</mark
-    >. Ahora estoy aprendiendo <mark>desarrollo web</mark> y espero convertirme pronto
-    en un desarrollador <mark>Full-Stack</mark>.
-  </p>
-
-  <p>Tengo experiencia en investigación social y en el análisis de datos.</p>
+    <p>Tengo experiencia en investigación social y en el análisis de datos.</p>
+    </div>
+  </div>
 
   <h3>mis grados</h3>
-  <div class="columns">
-
+  <div class="columns-2">
     <div class="degree">
       <figure class="university_logo">
-        <img src="/public/media/2022/03/logo_up.webp" alt="Logo de la Universidad de Potsdam" />
+        <img
+          src="/public/media/2022/03/logo_up.webp"
+          alt="Logo de la Universidad de Potsdam"
+        />
       </figure>
       <p class="centered">magister en <mark>gestión pública</mark></p>
       <p class="centered"><mark>2018</mark></p>
@@ -38,28 +42,45 @@ import Base from "../layouts/base.astro";
 
     <div class="degree">
       <figure class="university_logo">
-        <img src="/public/media/2022/03/logo_pucp.webp" alt="Logo de la Universidad Católica del Perú" />
+        <img
+          src="/public/media/2022/03/logo_pucp.webp"
+          alt="Logo de la Universidad Católica del Perú"
+        />
       </figure>
       <p class="centered">licenciado en <mark>sociología</mark></p>
       <p class="centered"><mark>2014</mark></p>
     </div>
-
   </div>
 
   <h3>mis skils</h3>
   <div class="icons">
-  <i class="fa-brands fa-html5"></i>
-  <i class="fa-brands fa-css3"></i>
-  <i class="fa-brands fa-sass"></i>
-  <i class="fa-brands fa-linux"></i>
-  <i class="fa-brands fa-r-project"></i>
-  <i class="fa-brands fa-js"></i>
+    <i class="fa-brands fa-html5"></i>
+    <i class="fa-brands fa-css3"></i>
+    <i class="fa-brands fa-sass"></i>
+    <i class="fa-brands fa-linux"></i>
+    <i class="fa-brands fa-r-project"></i>
+    <i class="fa-brands fa-js"></i>
   </div>
 </Base>
 
 <style lang="scss">
+@use "../scss/_mixins" as mixin;
+
+.columns-2 {
+
+
+  @include mixin.tablet-plus {
+    & {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
+    }
+
+  }
+}
   .portrait {
-    max-width: 100%;
+    // max-width: 100%;
+    max-width: 20rem;
 
     img {
       border-radius: 50%;
@@ -68,8 +89,8 @@ import Base from "../layouts/base.astro";
 
   .university_logo {
     //   max-width: 100%;
-      height: 150px;
-      padding: 1em;
+    height: 150px;
+    padding: 1em;
   }
 
   .icons {

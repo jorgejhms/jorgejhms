@@ -4,15 +4,18 @@ import Button from "../components/button.astro";
 ---
 
 <Base title="inicio | jorgejhms" description="Prueba">
+<div class="vertical-centered">
   <h2>¡Hola! Soy</h2>
   <h3 class="name">Jorge Meneses</h3>
   <h4>
     y me encanta <mark>programar</mark> páginas web y <mark>analizar</mark> data.
   </h4>
   <Button>Contáctame</Button>
+</div>
 </Base>
 
 <style lang="scss">
+@use "../scss/_mixins" as mixin;
   .name {
     font-size: clamp(4rem, 1px + 10vw, 6.25rem);
     color: var(--color-purple);
@@ -24,4 +27,13 @@ import Button from "../components/button.astro";
       content: '';
     }
   }
+
+.vertical-centered {
+  @include mixin.tablet-plus {
+    & {
+      margin-top: 25%;
+    }
+  }
+}
+
 </style>
