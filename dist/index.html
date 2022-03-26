@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="es" class="astro-W67KU564">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prueba">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/54d0e7e6da.js" crossorigin="anonymous"></script>
+    <title>inicio | jorgejhms</title>
+  <link rel="stylesheet" href="/assets/button.366bffe3.css"></link>
+<link rel="stylesheet" href="/assets/base.63718180.css"></link>
+<link rel="stylesheet" href="/assets/index.610000cf.css"></link>
+</head>
+  <body>
+    <header id="header" class="transparent-bg astro-W67KU564">
+      <div class="header-wrapper astro-JZOUCIUM">
+  <div class="logo-wrapper astro-JZOUCIUM">
+    <h1 id="logo_title" class="astro-JZOUCIUM">jorgejhms</h1>
+    <h2 id="tagline" class="astro-JZOUCIUM">Sociólogo y desarrollador web</h2>
+  </div>
+
+  <i class="fa-solid fa-bars astro-JZOUCIUM" id="mobile-menu-icon"></i>
+</div>
+
+<div class="mobile-menu-wrapper transparent-bg astro-JZOUCIUM" id="mobile-menu-wrapper">
+  <p id="mobile-menu-close-button" class="astro-JZOUCIUM"><i class="fa-solid fa-xmark astro-JZOUCIUM"></i> Cerrar</p>
+
+  <nav class="astro-JZOUCIUM">
+    <ul id="mobile-menu" class="astro-JZOUCIUM">
+      <li class="astro-JZOUCIUM"><a href="/" class="astro-JZOUCIUM">01. inicio</a></li><li class="astro-JZOUCIUM"><a href="/about" class="astro-JZOUCIUM">02. acerca de mi</a></li><li class="astro-JZOUCIUM"><a href="/works" class="astro-JZOUCIUM">03. mi experiencia</a></li>
+    </ul>
+  </nav>
+</div>
+
+<nav class="astro-JZOUCIUM">
+  <ul id="desktop-menu" class="astro-JZOUCIUM">
+  <li class="astro-JZOUCIUM"><a href="/" class="astro-JZOUCIUM">01. inicio</a></li><li class="astro-JZOUCIUM"><a href="/about" class="astro-JZOUCIUM">02. acerca de mi</a></li><li class="astro-JZOUCIUM"><a href="/works" class="astro-JZOUCIUM">03. mi experiencia</a></li>
+  </ul>
+</nav>
+
+<script>
+  const mobileMenuIcon = document.getElementById("mobile-menu-icon");
+  const closeButton = document.getElementById("mobile-menu-close-button");
+  const mobileMenuWrapper = document.getElementById("mobile-menu-wrapper");
+
+  mobileMenuIcon.onclick = () => {
+    mobileMenuWrapper.style.display = "grid";
+  };
+
+  closeButton.onclick = () => {
+    mobileMenuWrapper.style.display = "none";
+  };
+</script>
+
+
+
+    </header>
+
+    <main class="astro-W67KU564">
+      <div class="vertical-centered astro-3OQ5SWAC">
+  <h2 class="astro-3OQ5SWAC">¡Hola! Soy</h2>
+  <h3 class="name astro-3OQ5SWAC">Jorge Meneses</h3>
+  <h4 class="astro-3OQ5SWAC">
+    y me encanta <mark class="astro-3OQ5SWAC">programar</mark> páginas web y <mark class="astro-3OQ5SWAC">analizar</mark> data.
+  </h4>
+  <button class="astro-EMQDXH7E">
+  <a href="#" class="astro-EMQDXH7E">Contáctame</a>
+</button>
+
+
+
+</div>
+    </main>
+
+    <footer class="astro-W67KU564">
+      <p class="astro-NNK33IWE">
+  ©2022 jorgejhms. Desarrollado con <a href="https://astro.build/" class="astro-NNK33IWE">Astro</a>
+</p>
+
+
+
+    </footer>
+  <script>
+  let mobile = window.matchMedia("(max-width: 37.5rem)");
+
+  window.onscroll = function () {
+    scrollFunction(mobile);
+  };
+
+  function scrollFunction(viwport) {
+    if (viwport.matches) {
+      if (
+        document.body.scrollTop > 50 ||
+        document.documentElement.scrollTop > 50
+      ) {
+        document.getElementById("logo_title").style.fontSize = "1.2rem";
+        document.getElementById("header").style.padding = "0.4em";
+        document.getElementById("tagline").style.display = "none";
+      } else {
+        document.getElementById("logo_title").style.fontSize = "";
+        document.getElementById("header").style.padding = "";
+        document.getElementById("tagline").style.display = "";
+      }
+    }
+  }
+</script>
+
+
+</body></html>
+
+
