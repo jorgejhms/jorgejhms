@@ -1,13 +1,14 @@
 ---
 import Button from "../components/button.astro";
 import Card from "../components/card.astro";
+import imgFallback from "../../public/media/img_fallback.png";
 const {
   title,
   date,
   description,
   tags,
   link = "#",
-  img = "./public/media/img_fallback.png",
+  img = imgFallback,
   alt = "Imagen de demo",
 } = Astro.props;
 ---

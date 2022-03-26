@@ -1,5 +1,7 @@
 ---
 import Base from "../layouts/base.astro";
+import imgJorge1x from "/public/media/2022/03/jorge_normal.webp"
+import imgJorge2x from "/public/media/2022/03/jorge_retina.webp"
 ---
 
 <Base title="acerca de mi | jorgejhms.net" description="Prueba">
@@ -7,9 +9,9 @@ import Base from "../layouts/base.astro";
   <div class="columns-2">
     <figure class="portrait">
       <img
-        src="/public/media/2022/03/jorge_normal.webp"
+        src={imgJorge1x}
         alt="Foto de Jorge Meneses"
-        srcset="/public/media/2022/03/jorge_normal.webp 1x, /public/media/2022/03/jorge_retina.webp 2x"
+        srcset={ imgJorge1x + " 1x, " + imgJorge2x + " 2x"}
       />
       <figcaption>
         Posando en los exteriores de la Universidad de Potsdam (2018)

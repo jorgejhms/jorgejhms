@@ -80,6 +80,7 @@ mark {
 a {
   color: var(--color-green);
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 a:visited {
@@ -88,6 +89,7 @@ a:visited {
 
 a:hover {
   color: var(--color-yellow);
+  text-decoration: underline;
 }
 
 a:active {

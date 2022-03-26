@@ -1,9 +1,9 @@
 ---
-const { href } = Astro.props;
+const { href ='#' } = Astro.props;
 ---
 
 <button>
-  <a {href}><slot /></a>
+  <a href={href}><slot /></a>
 </button>
 
 <style lang="scss">
