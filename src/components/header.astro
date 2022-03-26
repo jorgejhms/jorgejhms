@@ -47,7 +47,11 @@
   };
 </script>
 
-<style>
+<style lang="scss">
+
+
+  @use "../scss/_mixins" as mixin;
+
   h1 {
     color: var(--color-green);
     text-align: left;
@@ -65,6 +69,10 @@
     text-align: left;
     font-weight: 300;
     color: var(--color-cyan);
+
+    &::before {
+      content: none;
+    }
   }
 
   ul {
@@ -82,6 +90,12 @@
     color: var(--color-text);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+
+    @include mixin.tablet-plus() {
+      & {
+        display: none;
+      }
+    }
   }
 
   #mobile-menu-icon:hover {
@@ -121,6 +135,12 @@
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
+    }
+
+    @include mixin.tablet-plus() {
+      & {
+        display: block;
+      }
     }
   }
 
