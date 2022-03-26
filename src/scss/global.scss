@@ -30,8 +30,6 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-base);
-  height: 100%;
-  width: 100%;
   padding-bottom: 2rem;
 }
 
@@ -44,7 +42,6 @@ h2 {
   font-family: var(--font-header);
   font-weight: 300;
   color: var(--color-cyan);
-  // margin-top: 2%;
 
   &::before {
     content: "##";
@@ -80,8 +77,8 @@ mark {
   color: var(--color-green);
 }
 
-a:link {
-  color: var(--color-orange);
+a {
+  color: var(--color-green);
   transition: all 0.2s ease-in-out;
 }
 
@@ -126,3 +123,8 @@ figcaption{
   text-align: center;
 }
 
+.transparent-bg{
+  backdrop-filter: blur(5px);
+  background-color: rgba(40, 42, 54, 0.9);
+  // opacity: 0.9;
+}
