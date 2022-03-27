@@ -4,11 +4,11 @@
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
 	// Comment out "renderers: []" to enable Astro's default component support.
-	
+
 	dist: './docs/',
 	renderers: [],
 	buildOptions: {
 		// Example: Tell Astro the final URL of your deployed website.
-		   site: 'https://jorgejhms.github.io/jorgejhms/'
-	  }
+		site: 'https://jorgejhms.github.io/jorgejhms/'
+	}
 });
