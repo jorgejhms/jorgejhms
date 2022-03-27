@@ -1,13 +1,13 @@
 ---
-const menu = [
-  { url: "./", text: "01. inicio" },
-  { url: "./about", text: "02. acerca de mi" },
+// const menu = [
+  // { url: "/", text: "01. inicio" },
+  // { url: "/about", text: "02. acerca de mi" },
   // { url: '/portfolio', text: '03. portafolio'},
-  { url: './works', text: '03. mi experiencia'}
+  // { url: '/works', text: '03. mi experiencia'}
   // { url: '/works', text: '04. mi experiencia'}
   // { url: '#', text: '05. blog'},
   // { url: '#', text: '06. contáctame'}
-];
+// ];
 ---
 <div class="header-wrapper">
   <div class="logo-wrapper">
@@ -23,18 +23,22 @@ const menu = [
 
   <nav>
     <ul id="mobile-menu">
-      {menu.map(item =>
+      <!-- {menu.map(item =>
         <li><a href={item.url}>{item.text}</a></li>
-      )}
+      )} -->
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/about">Acerca</a></li>
     </ul>
   </nav>
 </div>
 
 <nav>
   <ul id="desktop-menu">
-  {menu.map(item =>
+  <!-- {menu.map(item =>
         <li><a href={item.url}>{item.text}</a></li>
-      )}
+      )} -->
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/about">Acerca</a></li>
   </ul>
 </nav>
 
