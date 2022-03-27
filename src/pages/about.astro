@@ -1,7 +1,9 @@
 ---
 import Base from "../layouts/base.astro";
-import imgJorge1x from "/public/media/2022/03/jorge_normal.webp"
-import imgJorge2x from "/public/media/2022/03/jorge_retina.webp"
+import imgJorge1x from "/public/media/2022/03/jorge_normal.webp";
+import imgJorge2x from "/public/media/2022/03/jorge_retina.webp";
+import logoPucp from "/public/media/2022/03/logo_pucp.webp";
+import logoUP from "/public/media/2022/03/logo_up.webp";
 ---
 
 <Base title="acerca de mi | jorgejhms.net" description="Prueba">
@@ -11,21 +13,23 @@ import imgJorge2x from "/public/media/2022/03/jorge_retina.webp"
       <img
         src={imgJorge1x}
         alt="Foto de Jorge Meneses"
-        srcset={ imgJorge1x + " 1x, " + imgJorge2x + " 2x"}
+        srcset={imgJorge1x + " 1x, " + imgJorge2x + " 2x"}
       />
       <figcaption>
         Posando en los exteriores de la Universidad de Potsdam (2018)
       </figcaption>
     </figure>
     <div>
-    <p>
-      Mi nombre es Jorge Meneses. Soy <mark>sociólogo</mark> y Mg. en <mark
-        >gestión pública</mark
-      >. Ahora estoy aprendiendo <mark>desarrollo web</mark> y espero convertirme
-      pronto en un desarrollador <mark>Full-Stack</mark>.
-    </p>
+      <p>
+        Mi nombre es Jorge Meneses. Soy <mark>sociólogo</mark> y Mg. en <mark
+          >gestión pública</mark
+        >. Ahora estoy aprendiendo <mark>desarrollo web</mark> y espero convertirme
+        pronto en un desarrollador <mark>Full-Stack</mark>.
+      </p>
 
-    <p>Tengo experiencia en investigación social y en el análisis de datos.</p>
+      <p>
+        Tengo experiencia en investigación social y en el análisis de datos.
+      </p>
     </div>
   </div>
 
@@ -34,7 +38,7 @@ import imgJorge2x from "/public/media/2022/03/jorge_retina.webp"
     <div class="degree">
       <figure class="university_logo">
         <img
-          src="/public/media/2022/03/logo_up.webp"
+          src={logoUP}
           alt="Logo de la Universidad de Potsdam"
         />
       </figure>
@@ -45,7 +49,7 @@ import imgJorge2x from "/public/media/2022/03/jorge_retina.webp"
     <div class="degree">
       <figure class="university_logo">
         <img
-          src="/public/media/2022/03/logo_pucp.webp"
+          src={logoPucp}
           alt="Logo de la Universidad Católica del Perú"
         />
       </figure>
@@ -66,20 +70,17 @@ import imgJorge2x from "/public/media/2022/03/jorge_retina.webp"
 </Base>
 
 <style lang="scss">
-@use "../scss/_mixins" as mixin;
+  @use "../scss/_mixins" as mixin;
 
-.columns-2 {
-
-
-  @include mixin.tablet-plus {
-    & {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1em;
+  .columns-2 {
+    @include mixin.tablet-plus {
+      & {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+      }
     }
-
   }
-}
   .portrait {
     // max-width: 100%;
     max-width: 20rem;
