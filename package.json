@@ -10,7 +10,7 @@
     "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
   },
   "devDependencies": {
-    "astro": "^0.24.0"
+    "astro": "^0.25.2"
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
