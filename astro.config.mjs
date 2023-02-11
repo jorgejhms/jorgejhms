@@ -9,6 +9,6 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
 	integrations: [],
 	buildOptions: {
 		// Example: Tell Astro the final URL of your deployed website.
-		site: 'https://jorgejhms.net'
+		site: 'https://jorgejhms.pages.dev'
 	}
 });
