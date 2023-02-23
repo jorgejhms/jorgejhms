@@ -2,13 +2,17 @@
 // https://docs.astro.build/reference/configuration-reference
 
 // @ts-check
-export default /** @type {import('astro').AstroUserConfig} */ ({
-	// Comment out "renderers: []" to enable Astro's default component support.
+// export default /** @type {import('astro').AstroUserConfig} */ ({
+// 	// Comment out "renderers: []" to enable Astro's default component support.
 
-	// dist: './docs/',
-	integrations: [],
-	buildOptions: {
-		// Example: Tell Astro the final URL of your deployed website.
-		site: 'https://amazing-moonbeam-80387c.netlify.app/'
-	}
-});
+// 	// dist: './docs/',
+// 	integrations: [],
+// 	buildOptions: {
+// 		// Example: Tell Astro the final URL of your deployed website.
+// 		site: 'https://amazing-moonbeam-80387c.netlify.app/'
+// 	}
+// });
+
+export default {
+	site: 'https://amazing-moonbeam-80387c.netlify.app/'
+}
