@@ -13,7 +13,6 @@
     "astro": "^2.0.10"
   },
   "dependencies": {
-    "astro-netlify-cms": "^0.0.1",
     "autoprefixer": "^10.4.2",
     "normalize.css": "^8.0.1",
     "prettier": "^2.5.1",
