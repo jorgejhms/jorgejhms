@@ -1,0 +1,130 @@
+---
+interface Testimonial {
+  name: string;
+  company: string;
+  role: string;
+  quote: string;
+  image?: string;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    name: "Cliente Placeholder 1",
+    company: "Empresa Ejemplo",
+    role: "CEO / Founder",
+    quote: "Testimonio placeholder: Describa cómo Jorge ayudó a su empresa. Mencione el impacto técnico y de negocio.",
+    image: "/testimonials/placeholder-1.jpg",
+  },
+  {
+    name: "Cliente Placeholder 2",
+    company: "Startup Tech",
+    role: "CTO",
+    quote: "Testimonio placeholder: Explique la calidad del trabajo, la comunicación, y resultados entregados.",
+    image: "/testimonials/placeholder-2.jpg",
+  },
+  {
+    name: "Cliente Placeholder 3",
+    company: "Agencia Digital",
+    role: "Project Manager",
+    quote: "Testimonio placeholder: Destaque habilidades técnicas, atención al detalle, y capacidad de resolver problemas.",
+    image: "/testimonials/placeholder-3.jpg",
+  },
+];
+---
+
+<section class="section-spacing" id="testimonials">
+  <div class="container mx-auto max-w-5xl px-6">
+    <div class="mb-12 space-y-4">
+      <h2 class="neon-text font-mono text-3xl font-bold md:text-4xl">
+        <span class="text-primary mr-2">&gt;</span> Testimonios
+      </h2>
+      <p class="text-muted font-mono text-sm">
+        <span class="text-comment">//</span> Qué dicen mis clientes sobre el trabajo
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        testimonials.map((testimonial) => (
+          <div class="group relative overflow-hidden rounded-lg border border-primary/20 bg-surface p-6 backdrop-blur transition-all hover:border-primary/40 hover:bg-surface/80">
+            {/* Decorative glow effect */}
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 transition-opacity group-hover:opacity-100" />
+
+            <div class="relative z-10 space-y-4">
+              {/* Quote mark */}
+              <div class="text-4xl text-primary/30">"</div>
+
+              {/* Quote text */}
+              <p class="text-foreground/80 leading-relaxed italic">{testimonial.quote}</p>
+
+              {/* Divider */}
+              <div class="h-px bg-gradient-to-r from-primary/20 to-transparent" />
+
+              {/* Author info */}
+              <div class="flex items-center gap-3 pt-2">
+                {testimonial.image && (
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    class="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-accent"
+                  />
+                )}
+                <div class="min-w-0 flex-1">
+                  <p class="truncate font-mono text-sm font-semibold text-foreground">
+                    {testimonial.name}
+                  </p>
+                  <p class="truncate text-xs text-muted">
+                    {testimonial.role} @ {testimonial.company}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    {/* Call to action */}
+    <div class="mt-12 rounded-lg border border-accent/20 bg-elevated p-6 text-center">
+      <p class="text-muted font-mono text-sm">
+        <span class="text-comment">//</span> ¿Necesitas un desarrollador para tu proyecto?
+      </p>
+      <h3 class="mt-2 text-xl font-bold text-foreground">
+        Contactemos para discutir tu idea
+      </h3>
+      <p class="mt-2 text-sm text-foreground/70">
+        Disponible para consultoría, proyectos fullstack y análisis de datos.
+      </p>
+      <a
+        href="#contact"
+        class="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 font-mono text-sm font-semibold text-background transition-all hover:shadow-lg hover:shadow-primary/50"
+      >
+        Iniciar conversación
+        <svg
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+</style>
