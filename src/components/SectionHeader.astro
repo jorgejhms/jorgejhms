@@ -1,0 +1,43 @@
+---
+interface Props {
+  command: string;
+  title: string;
+  highlight: string;
+  description?: string;
+  neonColor?: 'green' | 'purple' | 'cyan' | 'pink';
+}
+
+const {
+  command,
+  title,
+  highlight,
+  description,
+  neonColor = 'green',
+} = Astro.props;
+
+const neonClass = {
+  green: 'neon-text',
+  purple: 'neon-text-purple',
+  cyan: 'neon-text-cyan',
+  pink: 'neon-text-pink',
+}[neonColor];
+---
+
+<div class="mb-12 flex flex-col gap-6">
+  <div class="font-mono text-sm text-muted">
+    <span class="text-primary">$</span> {command}
+  </div>
+
+  <h2 class="font-mono text-3xl font-bold md:text-4xl lg:text-5xl">
+    <span class="text-foreground">{"> "}{title} </span>
+    <span class={neonClass}>{highlight}</span>
+  </h2>
+
+  {
+    description && (
+      <p class="max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
+        {description}
+      </p>
+    )
+  }
+</div>
