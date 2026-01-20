@@ -6,6 +6,7 @@
   tags: ["WebDev", "Wordpress"]
   url: "https://odditywebs.com/"
   description: "Cofundador de Oddity Webs. Diseño y programación web en Wordpres y otras plataformas"
+  featured: true
 
 - id: ccaijo-evaluador
   position: "Evaluador de Proyecto"
@@ -24,6 +25,7 @@
   tags: ["Consultoría", "Sociología", "Análisis de Datos"]
   url: "https://qrconsultingperu.com/"
   description: "Investigación y redacción sobre la migración venezolana en Perú y Ecuador."
+  featured: true
 
 - id: dar-analista
   position: "Analista de Datos"
@@ -33,6 +35,7 @@
   tags: ["Consultoría", "Sociología", "Análisis de Datos", "R"]
   url: "https://dar.org.pe/"
   description: "Limpieza, ordenamiento y análisis de base de datos para el proyecto 'Promoviendo Infraestructura Sostenible en Loreto'"
+  featured: true
 
 - id: derechos-emergencia
   position: "Investigación y redacción"
@@ -60,6 +63,7 @@
   tags: ["WebDev"]
   url: "http://apacheta.pe/"
   description: "Desarrollo y diseño de la página web Apacheta.pe"
+  featured: true
 
 - id: cooperaccion-investigador
   position: "Investigador"
