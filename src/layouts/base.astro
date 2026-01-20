@@ -1,7 +1,6 @@
 ---
 //src/layouts/base.astro
-import Header from "../components/header.astro";
-import Footer from "../components/footer.astro";
+import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 import { AstroFont } from "astro-font";
 const { title, description } = Astro.props;
@@ -58,50 +57,14 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header
-      id="header"
-      class="transparent-bg border-green sticky top-0 z-10 min-h-full border-b p-4 transition-all duration-200 ease-in-out sm:fixed sm:min-h-screen sm:w-[20rem] sm:border-r sm:border-b-0"
-    >
-      <Header />
+    <!-- Top Navigation -->
+    <header class="w-full relative z-50">
+      <Navigation />
     </header>
 
-    <main class="mx-auto w-full max-w-[65rem] p-4 sm:ml-[20rem]">
+    <!-- Main Content -->
+    <main class="w-full">
       <slot />
     </main>
-
-    <footer
-      class="border-green bg-bg fixed bottom-0 z-10 w-full border-t py-2 text-center text-[0.8rem]"
-    >
-      <Footer />
-    </footer>
   </body>
 </html>
-<script>
-  const mobile = window.matchMedia("(max-width: 640px)");
-
-  window.onscroll = function () {
-    scrollFunction(mobile);
-  };
-
-  function scrollFunction(viewport: MediaQueryList) {
-    if (viewport.matches) {
-      const scrollTop =
-        document.body.scrollTop || document.documentElement.scrollTop;
-      if (scrollTop > 50) {
-        const logoTitle = document.getElementById("logo_title");
-        const header = document.getElementById("header");
-        const tagline = document.getElementById("tagline");
-        if (logoTitle) logoTitle.style.fontSize = "1.2rem";
-        if (header) header.style.padding = "0.4em";
-        if (tagline) tagline.style.display = "none";
-      } else {
-        const logoTitle = document.getElementById("logo_title");
-        const header = document.getElementById("header");
-        const tagline = document.getElementById("tagline");
-        if (logoTitle) logoTitle.style.fontSize = "";
-        if (header) header.style.padding = "";
-        if (tagline) tagline.style.display = "";
-      }
-    }
-  }
-</script>
