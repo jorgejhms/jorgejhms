@@ -1,9 +1,9 @@
 name: "Jorge Meneses"
 username: "jorgejhms"
-title: "Senior Web Developer"
-bio: "Senior web developer specializing in Astro, Next.js, and data storytelling with R."
-heroDescription: "Especializado en crear aplicaciones web modernas con Next.js y Astro. Experiencia en análisis estadístico con R y visualización de datos."
-motto: "Construyendo el futuro, una línea de código a la vez"
+title: "Senior Full-Stack Engineer"
+bio: "Senior Full-Stack Engineer specializing in building production web applications with Next.js, Astro, and TypeScript. Expertise in data visualization and analytics dashboards."
+heroDescription: "Construyo aplicaciones web modernas, escalables y de alto rendimiento. Especializado en Next.js, Astro y dashboards de análisis de datos. Fundador de Vinilos Cusco con 4K+ usuarios mensuales."
+motto: "Performance-first development. Bringing ideas to life with code."
 email: "jorge@jorgejhms.net"
 
 availability:
@@ -40,14 +40,14 @@ site:
   favicon: "/favicon.svg"
 
 services:
-  - title: "Desarrollo de aplicaciones web con Next.js y Astro"
-    description: "Aplicaciones modernas, performantes y escalables"
-  - title: "Análisis de datos y visualizaciones con R"
-    description: "Transformación de datos complejos en insights visuales"
-  - title: "Consultoría técnica y code reviews"
-    description: "Mejora de arquitectura y mejores prácticas"
-  - title: "Mentoring en desarrollo frontend"
-    description: "Acompañamiento personalizado en tu crecimiento profesional"
+  - title: "Desarrollo fullstack con Next.js y Astro"
+    description: "Aplicaciones web modernas, performantes y escalables desde cero"
+  - title: "Dashboards y análisis de datos interactivos"
+    description: "Visualización de datos complejos con React, D3.js y herramientas modernas"
+  - title: "E-commerce y sistemas transaccionales"
+    description: "Plataformas robustas con pagos, inventario y gestión de usuarios"
+  - title: "Optimización de performance y SEO"
+    description: "Mejora de Core Web Vitals, velocidad de carga y posicionamiento"
 
 ctas:
   - href: "#projects"
