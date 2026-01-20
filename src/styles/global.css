@@ -89,6 +89,11 @@
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
+    background-image:
+      linear-gradient(rgba(98, 114, 164, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(98, 114, 164, 0.04) 1px, transparent 1px);
+    background-size: 250px 250px;
+    background-attachment: fixed;
   }
 
   /* Improved selection colors */
@@ -327,11 +332,135 @@
     }
   }
 
+  /* Terminal window component */
+  .terminal-window {
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    overflow: hidden;
+  }
+
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-elevated);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .terminal-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .terminal-dot--red {
+    background: var(--color-danger);
+  }
+
+  .terminal-dot--yellow {
+    background: var(--color-warning);
+  }
+
+  .terminal-dot--green {
+    background: var(--color-success);
+  }
+
+  .terminal-title {
+    flex: 1;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-muted);
+  }
+
+  .terminal-content {
+    padding: 1.5rem;
+  }
+
+  .terminal-footer {
+    padding: 0.75rem 1rem;
+    background: var(--color-elevated);
+    border-top: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-muted);
+  }
+
+  /* Tree view styling */
+  .tree-container {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.8;
+    white-space: pre;
+  }
+
+  .tree-root {
+    color: var(--color-foreground);
+  }
+
+  .tree-branch {
+    color: var(--color-muted);
+  }
+
+  .tree-category {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .tree-item {
+    color: var(--color-foreground);
+  }
+
+  /* Connection line style for contact section */
+  .connection-point {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+    border-left: 2px solid var(--color-primary);
+    padding-left: 2rem;
+    position: relative;
+  }
+
+  .connection-point::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 1.5rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary);
+  }
+
+  .connection-point:last-child {
+    border-left: none;
+  }
+
+  .connection-point:last-child::before {
+    display: none;
+  }
+
   /* Responsive utilities */
   @media (max-width: 640px) {
     .section-spacing {
       padding-top: var(--space-section-sm);
       padding-bottom: var(--space-section-sm);
+    }
+
+    .terminal-title {
+      font-size: 0.65rem;
+    }
+
+    .tree-container {
+      font-size: 0.75rem;
     }
   }
 }
