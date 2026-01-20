@@ -2,6 +2,8 @@
 import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
 import Button from "./Button.astro";
+import SectionHeader from "./SectionHeader.astro";
+import TerminalWindow from "./TerminalWindow.astro";
 
 const projects = await getCollection("projects");
 const featuredProjects = projects
@@ -17,31 +19,15 @@ const allProjects = projects.sort((a, b) => a.data.order - b.data.order);
   aria-labelledby="projects-heading"
 >
   <div class="container mx-auto px-6 md:px-12">
-    <!-- Section Header -->
-    <div class="mb-12 flex flex-col gap-6">
-      <div class="text-muted font-mono text-sm">
-        <span class="text-primary">$</span> ls projects --featured
-      </div>
-
-      <h2
-        id="projects-heading"
-        class="font-mono text-3xl font-bold md:text-4xl lg:text-5xl"
-      >
-        <span class="text-foreground">{">"} Mis </span>
-        <span class="neon-text">Proyectos</span>
-      </h2>
-
-      <p
-        class="text-foreground/80 max-w-2xl text-base leading-relaxed md:text-lg"
-      >
-        Experimentación con frameworks modernos, flujos de datos y diseño
-        accesible orientado a performance. Cada proyecto está documentado con
-        foco en arquitectura y tooling.
-      </p>
-    </div>
+    <SectionHeader
+      command="ls projects --featured"
+      title="Mis"
+      highlight="Proyectos"
+      description="Experimentación con frameworks modernos, flujos de datos y diseño accesible orientado a performance. Cada proyecto está documentado con foco en arquitectura y tooling."
+    />
 
     <!-- Featured Projects Grid -->
-    <div class="mb-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {featuredProjects.map((project) => <ProjectCard project={project} />)}
     </div>
 
@@ -71,13 +57,5 @@ const allProjects = projects.sort((a, b) => a.data.order - b.data.order);
         </div>
       )
     }
-
-    <!-- Terminal output style -->
-    <div class="text-muted/60 mt-12 hidden font-mono text-xs md:block">
-      <span class="text-success">✓</span>
-      {featuredProjects.length} proyectos destacados cargados
-      <span class="mx-4">|</span>
-      <span class="text-primary">~/projects</span>
-    </div>
   </div>
 </section>
