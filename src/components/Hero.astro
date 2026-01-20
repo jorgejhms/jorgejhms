@@ -1,0 +1,152 @@
+---
+import { getCollection } from "astro:content";
+import Button from "./button.astro";
+
+// Explicitly type the collection query or cast the result if needed, 
+// though Astro's content layer should handle this if types are generated.
+// We'll use a safer access pattern.
+const siteCollection = await getCollection("site");
+const siteData = siteCollection[0]?.data;
+
+if (!siteData) {
+  throw new Error("Site configuration not found in content/site/");
+}
+
+const ctas = siteData.ctas;
+---
+
+<section
+  id="home"
+  class="flex min-h-[calc(100vh-100px)] items-center justify-center px-6"
+  aria-labelledby="hero-heading"
+>
+  <div class="container mx-auto max-w-4xl">
+    <div class="space-y-6 md:space-y-8">
+      <!-- Terminal prompt -->
+      <div class="text-muted animate-pulse font-mono text-sm md:text-base">
+        <span class="text-primary">$</span> whoami
+      </div>
+
+      <!-- Main heading -->
+      <div class="space-y-4">
+        <h1
+          id="hero-heading"
+          class="font-mono text-4xl leading-tight font-bold text-balance md:text-6xl lg:text-7xl"
+        >
+          <span class="text-foreground">{">"} Hola, soy </span>
+          <span class="neon-text block md:inline">{siteData.name}</span>
+        </h1>
+
+        <!-- Subtitle with terminal style -->
+        <p
+          class="text-muted-foreground font-mono text-lg md:text-xl lg:text-2xl"
+        >
+          <span class="text-primary">$</span>{" "}
+          <span class="neon-text-cyan">{siteData.title}</span>
+        </p>
+      </div>
+
+      <!-- Description -->
+      <div class="max-w-2xl space-y-4">
+        <p class="text-foreground/80 text-base leading-relaxed md:text-lg">
+          {siteData.heroDescription}
+        </p>
+
+        <p class="text-muted hidden font-mono text-sm md:block md:text-base">
+          <span class="text-comment">// {siteData.motto}</span>
+        </p>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col gap-4 pt-4 sm:flex-row">
+        {
+          ctas.map((cta: { href: string; label: string }, index: number) => (
+            <Button
+              href={cta.href}
+              variant={index === 0 ? "primary" : "outline"}
+              size="lg"
+              class={index === 0 ? "group interactive" : "group"}
+            >
+              {index === 1 && (
+                <svg
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              )}
+              {cta.label}
+              {index === 0 && (
+                <svg
+                  class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              )}
+            </Button>
+          ))
+        }
+      </div>
+
+      <!-- Terminal status bar -->
+      <div class="text-muted/60 hidden pt-8 font-mono text-xs md:block">
+        <span class="text-success">●</span> Online
+        <span class="mx-4">|</span>
+        <span class="text-primary">~/portfolio</span>
+        <span class="mx-4">|</span>
+        <span class="text-primary">{siteData.availability?.responseText || "Ready to work"}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 transform md:block"
+  >
+    <div class="animate-bounce">
+      <svg
+        class="text-muted h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>
