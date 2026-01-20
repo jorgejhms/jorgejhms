@@ -1,12 +1,35 @@
 ---
 import Base from "../layouts/base.astro";
 import WorkCard from "../components/work_card.astro";
-import { getCollection } from "astro:content";
+import { parse } from "yaml";
+import { readFileSync } from "fs";
+import { resolve } from "path";
 
-const experience = await getCollection("experience");
+// Load experience data from YAML
+const experiencePath = resolve("./src/data/experience.yaml");
+const experienceYaml = readFileSync(experiencePath, "utf-8");
+const allExperience = parse(experienceYaml) as Array<{
+  id: string;
+  position: string;
+  workplace: string;
+  startDate: string;
+  endDate: string;
+  url: string;
+  tags: string[];
+  description: string;
+  featured?: boolean;
+}>;
+
+// Filter by featured (default true if not specified, to show all by default)
+// User can toggle to show only featured
+const showOnlyFeatured = false; // Change to true to show only featured by default
+const experience = showOnlyFeatured
+  ? allExperience.filter((item) => item.featured === true)
+  : allExperience;
+
+// Sort by start date (most recent first)
 experience.sort(
-  (a, b) =>
-    new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime(),
+  (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
 );
 ---
 
@@ -20,19 +43,24 @@ experience.sort(
         <p class="text-muted font-mono text-sm">
           <span class="text-comment">//</span> Cronología de mi trayectoria profesional
         </p>
+        <p class="text-foreground/70 text-sm">
+          Total de {allExperience.length} posiciones • Mostrando {
+            experience.length
+          }
+        </p>
       </div>
 
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
         {
           experience.map((item) => (
             <WorkCard
-              position={item.data.position}
-              workplace={item.data.workplace}
-              start_date={item.data.startDate}
-              end_date={item.data.endDate}
-              url={item.data.url}
-              tags={item.data.tags}
-              description={item.data.description}
+              position={item.position}
+              workplace={item.workplace}
+              start_date={item.startDate}
+              end_date={item.endDate}
+              url={item.url}
+              tags={item.tags}
+              description={item.description}
             />
           ))
         }
