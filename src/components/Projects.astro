@@ -1,0 +1,83 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
+import Button from "./Button.astro";
+
+const projects = await getCollection("projects");
+const featuredProjects = projects
+  .filter((project) => project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const allProjects = projects.sort((a, b) => a.data.order - b.data.order);
+---
+
+<section
+  id="projects"
+  class="section-spacing bg-elevated/20 -mx-6 md:-mx-12"
+  aria-labelledby="projects-heading"
+>
+  <div class="container mx-auto px-6 md:px-12">
+    <!-- Section Header -->
+    <div class="mb-12 flex flex-col gap-6">
+      <div class="text-muted font-mono text-sm">
+        <span class="text-primary">$</span> ls projects --featured
+      </div>
+
+      <h2
+        id="projects-heading"
+        class="font-mono text-3xl font-bold md:text-4xl lg:text-5xl"
+      >
+        <span class="text-foreground">{">"} Mis </span>
+        <span class="neon-text">Proyectos</span>
+      </h2>
+
+      <p
+        class="text-foreground/80 max-w-2xl text-base leading-relaxed md:text-lg"
+      >
+        Experimentación con frameworks modernos, flujos de datos y diseño
+        accesible orientado a performance. Cada proyecto está documentado con
+        foco en arquitectura y tooling.
+      </p>
+    </div>
+
+    <!-- Featured Projects Grid -->
+    <div class="mb-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {featuredProjects.map((project) => <ProjectCard project={project} />)}
+    </div>
+
+    <!-- Show All Projects Button -->
+    {
+      allProjects.length > featuredProjects.length && (
+        <div class="text-center">
+          <Button href="/works" variant="outline" size="lg" class="group">
+            <svg
+              class="mr-2 h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+              />
+            </svg>
+            Ver todos los proyectos
+            <span class="text-muted ml-2 font-mono">
+              ({allProjects.length - featuredProjects.length} más)
+            </span>
+          </Button>
+        </div>
+      )
+    }
+
+    <!-- Terminal output style -->
+    <div class="text-muted/60 mt-12 hidden font-mono text-xs md:block">
+      <span class="text-success">✓</span>
+      {featuredProjects.length} proyectos destacados cargados
+      <span class="mx-4">|</span>
+      <span class="text-primary">~/projects</span>
+    </div>
+  </div>
+</section>
