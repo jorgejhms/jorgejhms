@@ -37,11 +37,6 @@ export default defineConfig([
 
   // Astro configuration
   ...eslintPluginAstro.configs.recommended,
-  {
-    rules: {
-      // Override specific Astro rules if needed
-    },
-  },
 
   // JSX/TSX configuration for Preact components
   {
@@ -58,15 +53,23 @@ export default defineConfig([
     },
   },
 
-  // Prettier integration
+  // Prettier integration for JS/TS/JSX/TSX files
   {
-    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.astro"],
+    files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
     plugins: {
       prettier: eslintPluginPrettier,
     },
     extends: [eslintConfigPrettier],
     rules: {
       "prettier/prettier": "error",
+    },
+  },
+
+  // Prettier config for Astro: disable prettier/prettier since Prettier handles the whole file
+  {
+    files: ["**/*.astro"],
+    rules: {
+      "prettier/prettier": "off",
     },
   },
 

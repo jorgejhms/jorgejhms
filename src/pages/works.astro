@@ -6,7 +6,9 @@ import data from "../../public/data/works.json";
 
 <Base title="mi experiencia | jorgejhms" description="Prueba">
   <h2>mi experiencia</h2>
-  <div class="work_grid">
+  <div
+    class="flex w-full flex-col gap-4 sm:grid sm:grid-cols-[repeat(auto-fit,minmax(35ch,1fr))]"
+  >
     {
       data.map((work) => (
         <WorkCard
@@ -22,18 +24,3 @@ import data from "../../public/data/works.json";
     }
   </div>
 </Base>
-
-<style lang="scss">
-  .work_grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-
-    @media only screen and (min-width: 600px) {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
-      width: 100%;
-      // grid-template-columns: repeat(4, 1fr);
-    }
-  }
-</style>

@@ -14,27 +14,8 @@ const {
 ---
 
 <Card {title} {tags} {date} {description}>
-  <figure slot="image">
-    <img src={img} {alt} />
+  <figure slot="image" class="mt-2 aspect-video rounded-[10px]">
+    <img src={img} {alt} class="object-cover object-[0%_0%]" />
   </figure>
   <Button href={link}>Ver demo</Button>
 </Card>
-
-<style lang="scss">
-  .tags {
-    margin: 0;
-    display: flex;
-    gap: 0.2em;
-  }
-
-  figure {
-    border-radius: 10px;
-    aspect-ratio: 16 / 9;
-    margin-top: 0.5rem;
-
-    img {
-      object-fit: cover; // ajusta imagen al ancho
-      object-position: 0% 0%;
-    }
-  }
-</style>

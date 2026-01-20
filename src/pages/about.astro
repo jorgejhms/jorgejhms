@@ -8,12 +8,13 @@ import logoUP from "/public/media/2022/03/logo_up.webp";
 
 <Base title="acerca de mi | jorgejhms.net" description="Prueba">
   <h2>acerca de mi</h2>
-  <div class="columns-2">
-    <figure class="portrait">
+  <div class="sm:grid sm:grid-cols-2 sm:gap-4">
+    <figure class="max-w-80">
       <img
         src={imgJorge1x}
         alt="Foto de Jorge Meneses"
         srcset={imgJorge1x + " 1x, " + imgJorge2x + " 2x"}
+        class="rounded-full"
       />
       <figcaption>
         Posando en los exteriores de la Universidad de Potsdam (2018)
@@ -34,9 +35,9 @@ import logoUP from "/public/media/2022/03/logo_up.webp";
   </div>
 
   <h3>mis grados</h3>
-  <div class="columns-2">
-    <div class="degree">
-      <figure class="university_logo">
+  <div class="sm:grid sm:grid-cols-2 sm:gap-4">
+    <div>
+      <figure class="h-[150px] p-4">
         <img
           src={logoUP}
           alt="Logo de la Universidad de Potsdam"
@@ -47,8 +48,8 @@ import logoUP from "/public/media/2022/03/logo_up.webp";
       <p class="centered"><mark>2018</mark></p>
     </div>
 
-    <div class="degree">
-      <figure class="university_logo">
+    <div>
+      <figure class="h-[150px] p-4">
         <img
           src={logoPucp}
           alt="Logo de la Universidad Católica del Perú"
@@ -61,7 +62,7 @@ import logoUP from "/public/media/2022/03/logo_up.webp";
   </div>
 
   <h3>mis skils</h3>
-  <div class="icons">
+  <div class="flex justify-around gap-4 text-2xl">
     <i class="fa-brands fa-html5"></i>
     <i class="fa-brands fa-css3"></i>
     <i class="fa-brands fa-sass"></i>
@@ -70,38 +71,3 @@ import logoUP from "/public/media/2022/03/logo_up.webp";
     <i class="fa-brands fa-js"></i>
   </div>
 </Base>
-
-<style lang="scss">
-  @use "../scss/_mixins" as mixin;
-
-  .columns-2 {
-    @include mixin.tablet-plus {
-      & {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1em;
-      }
-    }
-  }
-  .portrait {
-    // max-width: 100%;
-    max-width: 20rem;
-
-    img {
-      border-radius: 50%;
-    }
-  }
-
-  .university_logo {
-    //   max-width: 100%;
-    height: 150px;
-    padding: 1em;
-  }
-
-  .icons {
-    font-size: 1.5rem;
-    display: flex;
-    gap: 1em;
-    justify-content: space-around;
-  }
-</style>

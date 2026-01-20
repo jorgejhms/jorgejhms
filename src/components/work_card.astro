@@ -14,17 +14,7 @@ const date = start_date + " / " + end_date;
 ---
 
 <Card title={position} {tags} {date} {description}>
-  <p class="workplace" slot="subtitle"><a href={url}>{workplace}</a></p>
+  <p class="font-header my-[0.2em] font-black" slot="subtitle">
+    <a href={url} class="text-purple">{workplace}</a>
+  </p>
 </Card>
-
-<style lang="scss">
-  .workplace {
-    font-family: var(--font-header);
-    font-weight: 900;
-    margin: 0.2em 0;
-
-    a {
-      color: var(--color-purple);
-    }
-  }
-</style>

@@ -2,23 +2,8 @@
 const { href = "#" } = Astro.props;
 ---
 
-<button>
-  <a href={href}><slot /></a>
+<button
+  class="bg-purple font-header cursor-pointer rounded-[10px] border-0 px-4 py-2 font-bold"
+>
+  <a href={href} class="text-bg no-underline"><slot /></a>
 </button>
-
-<style lang="scss">
-  button {
-    background-color: var(--color-purple);
-    border: 0;
-    border-radius: 10px;
-    padding: 0.5em 1em;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: var(--font-header);
-
-    a {
-      color: var(--color-bg);
-      text-decoration: none;
-    }
-  }
-</style>

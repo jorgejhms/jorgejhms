@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores Dracula */
+  --color-bg: #282a36;
+  --color-text: #f8f8f2;
+  --color-selection: #44475a;
+  --color-comment: #6272a4;
+  --color-red: #ff5555;
+  --color-orange: #ffb86c;
+  --color-yellow: #f1fa8c;
+  --color-green: #50fa7b;
+  --color-purple: #bd93f9;
+  --color-purple-dark: #a8a0b2;
+  --color-cyan: #8be9fd;
+  --color-pink: #ff79c6;
+  --color-pre-bg: #100f17;
+  --color-header-bg: #414662;
+  --color-footer-bg: #0f0f0f;
+  --color-card-bg: #2f3140;
+
+  /* Tipografía */
+  --font-sans: "Fira Sans", sans-serif;
+  --font-header: "JetBrains Mono", monospace;
+  --font-code: "Fira Code", monospace;
+
+  /* Sombras */
+  --shadow-dracula: 0 0 10px #bd93f98c;
+}
+
+/* Estilos base globales */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    @apply bg-bg text-text font-sans;
+  }
+
+  body {
+    @apply pb-8;
+  }
+
+  h2 {
+    @apply font-header text-cyan text-base font-light;
+
+    &::before {
+      content: "##";
+      @apply relative -left-2 text-[0.8rem] opacity-50;
+    }
+  }
+
+  h3 {
+    @apply font-header text-purple mt-[7%] text-base font-light;
+
+    &::before {
+      content: "###";
+      @apply relative -left-2 text-[0.8rem] opacity-50;
+    }
+  }
+
+  h4 {
+    @apply font-normal;
+  }
+
+  mark {
+    @apply text-green bg-transparent;
+  }
+
+  a {
+    @apply text-green no-underline transition-all duration-200 ease-in-out;
+  }
+
+  a:visited {
+    @apply text-purple-dark;
+  }
+
+  a:hover {
+    @apply text-yellow underline;
+  }
+
+  a:active {
+    @apply text-yellow;
+  }
+
+  figure {
+    @apply mx-auto overflow-hidden;
+  }
+
+  img {
+    @apply mx-auto block h-auto max-h-full w-full object-contain;
+  }
+
+  figcaption {
+    @apply font-header text-purple-dark mt-4 text-center text-[0.8rem] font-light;
+  }
+}
+
+@layer components {
+  .centered {
+    @apply text-center;
+  }
+
+  .transparent-bg {
+    @apply backdrop-blur-sm;
+    background-color: rgba(40, 42, 54, 0.9);
+  }
+}

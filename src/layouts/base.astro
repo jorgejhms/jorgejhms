@@ -2,8 +2,7 @@
 //src/layouts/base.astro
 import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
-import "../scss/global.scss";
-import "../../node_modules/normalize.css/normalize.css";
+import "../styles/global.css";
 import { AstroFont } from "astro-font";
 const { title, description } = Astro.props;
 ---
@@ -20,7 +19,8 @@ const { title, description } = Astro.props;
         {
           src: [],
           name: "Fira Sans",
-          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
           preload: true,
           display: "swap",
           selector: "body",
@@ -29,7 +29,8 @@ const { title, description } = Astro.props;
         {
           src: [],
           name: "JetBrains Mono",
-          googleFontsURL: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap',
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap",
           preload: true,
           display: "swap",
           selector: "code, pre, .mono",
@@ -38,7 +39,8 @@ const { title, description } = Astro.props;
         {
           src: [],
           name: "Fira Code",
-          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap',
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap",
           preload: true,
           display: "swap",
           selector: "code, pre, .code",
@@ -54,21 +56,26 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <header id="header" class="transparent-bg">
+    <header
+      id="header"
+      class="transparent-bg border-green sticky top-0 z-10 min-h-full border-b p-4 transition-all duration-200 ease-in-out sm:fixed sm:min-h-screen sm:w-[20rem] sm:border-r sm:border-b-0"
+    >
       <Header />
     </header>
 
-    <main>
+    <main class="mx-auto w-full max-w-[65rem] p-4 sm:ml-[20rem]">
       <slot />
     </main>
 
-    <footer>
+    <footer
+      class="border-green bg-bg fixed bottom-0 z-10 w-full border-t py-2 text-center text-[0.8rem]"
+    >
       <Footer />
     </footer>
   </body>
 </html>
 <script>
-  const mobile = window.matchMedia("(max-width: 37.5rem)");
+  const mobile = window.matchMedia("(max-width: 640px)");
 
   window.onscroll = function () {
     scrollFunction(mobile);
@@ -91,75 +98,3 @@ const { title, description } = Astro.props;
     }
   }
 </script>
-
-<style lang="scss">
-  @use "../scss/_mixins" as mixin;
-
-  header {
-    padding: 1rem;
-    min-height: 100%;
-    position: sticky;
-    top: 0;
-    border-bottom: 1px solid var(--color-green);
-    z-index: 1;
-    transition: all 0.2s ease-in-out;
-
-    @include mixin.tablet-plus() {
-      border-bottom: 0;
-    }
-  }
-
-  main {
-    padding: 1rem;
-    width: 100%;
-    max-width: 65rem;
-    margin-left: auto;
-    margin-right: auto;
-    // min-height: 100%;
-    // align-self: center;
-
-    @include mixin.tablet-plus() {
-      & {
-        // padding-left: 5rem;
-        // padding-right: 5rem;
-      }
-    }
-  }
-
-  footer {
-    font-size: 0.8rem;
-    width: 100%;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    border-top: 1px solid var(--color-green);
-    z-index: 1;
-    background-color: var(--color-bg);
-    padding: 0.5em 0;
-  }
-
-  @include mixin.tablet-plus() {
-    body {
-      display: grid;
-      grid-template-areas:
-        "header main"
-        "header footer";
-      grid-template-columns: 20rem 1fr;
-    }
-
-    header {
-      grid-area: header;
-      min-height: 100vh;
-      border-right: 1px solid var(--color-green);
-      position: fixed;
-    }
-
-    main {
-      grid-area: main;
-    }
-
-    footer {
-      grid-area: footer;
-    }
-  }
-</style>

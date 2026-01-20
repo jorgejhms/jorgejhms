@@ -24,13 +24,19 @@
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.52.0"
   },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-astro",
+      "prettier-plugin-tailwindcss"
+    ]
+  },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
     "astro-font": "^1.1.0",
-    "autoprefixer": "^10.4.2",
-    "normalize.css": "^8.0.1",
-    "sass": "^1.49.9"
+    "tailwindcss": "^4.1.18"
   }
 }
