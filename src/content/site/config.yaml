@@ -21,15 +21,18 @@ socials:
     display: "linkedin.com/in/jorgejhms"
 
 navLinks:
-  - href: "/"
+  - href: "#home"
     label: "Home"
     icon: "home"
-  - href: "/works"
-    label: "Experiencia"
+  - href: "#projects"
+    label: "Proyectos"
     icon: "code"
-  - href: "/about"
+  - href: "#about"
     label: "Sobre mí"
     icon: "user"
+  - href: "#contact"
+    label: "Contacto"
+    icon: "mail"
 
 site:
   url: "https://jorgejhms.net"
@@ -47,9 +50,9 @@ services:
     description: "Acompañamiento personalizado en tu crecimiento profesional"
 
 ctas:
-  - href: "/works"
-    label: "Ver experiencia"
+  - href: "#projects"
+    label: "Ver proyectos"
     icon: "arrow-right"
-  - href: "mailto:jorge@jorgejhms.net"
+  - href: "#contact"
     label: "Contactar"
     icon: "mail"
