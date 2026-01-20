@@ -7,18 +7,19 @@ import data from "../../public/data/works.json";
 <Base title="mi experiencia | jorgejhms" description="Prueba">
   <h2>mi experiencia</h2>
   <div class="work_grid">
-
-{
-  data.map( work => <WorkCard
-   position={work.position}
-   workplace={work.workplace}
-   start_date={work.start_date}
-   end_date={work.end_date}
-   url = {work.url}
-   tags = {work.tags}
-   description = {work.description}
-   />)
-}
+    {
+      data.map((work) => (
+        <WorkCard
+          position={work.position}
+          workplace={work.workplace}
+          start_date={work.start_date}
+          end_date={work.end_date}
+          url={work.url}
+          tags={work.tags}
+          description={work.description}
+        />
+      ))
+    }
   </div>
 </Base>
 
@@ -27,14 +28,12 @@ import data from "../../public/data/works.json";
     display: flex;
     flex-direction: column;
     gap: 1em;
-    
+
     @media only screen and (min-width: 600px) {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(35ch, 1fr));
       width: 100%;
       // grid-template-columns: repeat(4, 1fr);
-
     }
-
   }
 </style>
