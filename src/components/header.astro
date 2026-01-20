@@ -75,11 +75,15 @@ const menu = [
   const closeButton = document.getElementById("mobile-menu-close-button");
   const mobileMenuWrapper = document.getElementById("mobile-menu-wrapper");
 
-  mobileMenuIcon.onclick = () => {
-    mobileMenuWrapper.style.display = "grid";
-  };
+  if (mobileMenuIcon) {
+    mobileMenuIcon.onclick = () => {
+      if (mobileMenuWrapper) mobileMenuWrapper.style.display = "grid";
+    };
+  }
 
-  closeButton.onclick = () => {
-    mobileMenuWrapper.style.display = "none";
-  };
+  if (closeButton) {
+    closeButton.onclick = () => {
+      if (mobileMenuWrapper) mobileMenuWrapper.style.display = "none";
+    };
+  }
 </script>

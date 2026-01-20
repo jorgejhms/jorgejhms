@@ -48,9 +48,11 @@ const { title, description } = Astro.props;
         },
       ]}
     />
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-    ></script>
     <script
+      is:inline
+      src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script
+      is:inline
       src="https://kit.fontawesome.com/54d0e7e6da.js"
       crossorigin="anonymous"></script>
     <title>{title}</title>
@@ -81,19 +83,24 @@ const { title, description } = Astro.props;
     scrollFunction(mobile);
   };
 
-  function scrollFunction(viwport) {
-    if (viwport.matches) {
-      if (
-        document.body.scrollTop > 50 ||
-        document.documentElement.scrollTop > 50
-      ) {
-        document.getElementById("logo_title").style.fontSize = "1.2rem";
-        document.getElementById("header").style.padding = "0.4em";
-        document.getElementById("tagline").style.display = "none";
+  function scrollFunction(viewport: MediaQueryList) {
+    if (viewport.matches) {
+      const scrollTop =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      if (scrollTop > 50) {
+        const logoTitle = document.getElementById("logo_title");
+        const header = document.getElementById("header");
+        const tagline = document.getElementById("tagline");
+        if (logoTitle) logoTitle.style.fontSize = "1.2rem";
+        if (header) header.style.padding = "0.4em";
+        if (tagline) tagline.style.display = "none";
       } else {
-        document.getElementById("logo_title").style.fontSize = "";
-        document.getElementById("header").style.padding = "";
-        document.getElementById("tagline").style.display = "";
+        const logoTitle = document.getElementById("logo_title");
+        const header = document.getElementById("header");
+        const tagline = document.getElementById("tagline");
+        if (logoTitle) logoTitle.style.fontSize = "";
+        if (header) header.style.padding = "";
+        if (tagline) tagline.style.display = "";
       }
     }
   }
