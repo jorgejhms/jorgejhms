@@ -1,73 +1,69 @@
 ---
 import Base from "../layouts/base.astro";
-import imgJorge1x from "/public/media/2022/03/jorge_normal.webp";
-import imgJorge2x from "/public/media/2022/03/jorge_retina.webp";
-import logoPucp from "/public/media/2022/03/logo_pucp.webp";
-import logoUP from "/public/media/2022/03/logo_up.webp";
+import { getEntry } from "astro:content";
+
+const profile = await getEntry("about", "profile");
+
+if (!profile) {
+  throw new Error("Profile not found");
+}
+
+const { name, bio, image, imageRetina, imageCaption, education, skills } =
+  profile.data;
 ---
 
-<Base title="acerca de mi | jorgejhms.net" description="Prueba">
+<Base title="acerca de mi | jorgejhms.net" description={`Acerca de ${name}`}>
   <h2>acerca de mi</h2>
   <div class="sm:grid sm:grid-cols-2 sm:gap-4">
     <figure class="max-w-80">
       <img
-        src={imgJorge1x}
-        alt="Foto de Jorge Meneses"
-        srcset={imgJorge1x + " 1x, " + imgJorge2x + " 2x"}
+        src={image}
+        alt={`Foto de ${name}`}
+        srcset={`${image} 1x, ${imageRetina} 2x`}
         class="rounded-full"
       />
-      <figcaption>
-        Posando en los exteriores de la Universidad de Potsdam (2018)
-      </figcaption>
+      {imageCaption && <figcaption>{imageCaption}</figcaption>}
     </figure>
     <div>
-      <p>
-        Mi nombre es Jorge Meneses. Soy <mark>sociólogo</mark> y Mg. en <mark
-          >gestión pública</mark
-        >. Ahora estoy aprendiendo <mark>desarrollo web</mark> y espero convertirme
-        pronto en un desarrollador <mark>Full-Stack</mark>.
-      </p>
-
-      <p>
-        Tengo experiencia en investigación social y en el análisis de datos.
-      </p>
+      <p set:html={bio} />
     </div>
   </div>
 
-  <h3>mis grados</h3>
-  <div class="sm:grid sm:grid-cols-2 sm:gap-4">
-    <div>
-      <figure class="h-[150px] p-4">
-        <img
-          src={logoUP}
-          alt="Logo de la Universidad de Potsdam"
-          loading="lazy"
-        />
-      </figure>
-      <p class="centered">magister en <mark>gestión pública</mark></p>
-      <p class="centered"><mark>2018</mark></p>
-    </div>
+  {
+    education && education.length > 0 && (
+      <>
+        <h3>mis grados</h3>
+        <div class="sm:grid sm:grid-cols-2 sm:gap-4">
+          {education.map((edu) => (
+            <div>
+              <figure class="h-[150px] p-4">
+                <img
+                  src={edu.logo}
+                  alt={`Logo de ${edu.institution}`}
+                  loading="lazy"
+                />
+              </figure>
+              <p class="centered">{edu.degree.toLowerCase()}</p>
+              <p class="centered">
+                <mark>{edu.year}</mark>
+              </p>
+            </div>
+          ))}
+        </div>
+      </>
+    )
+  }
 
-    <div>
-      <figure class="h-[150px] p-4">
-        <img
-          src={logoPucp}
-          alt="Logo de la Universidad Católica del Perú"
-          loading="lazy"
-        />
-      </figure>
-      <p class="centered">licenciado en <mark>sociología</mark></p>
-      <p class="centered"><mark>2014</mark></p>
-    </div>
-  </div>
-
-  <h3>mis skils</h3>
-  <div class="flex justify-around gap-4 text-2xl">
-    <i class="fa-brands fa-html5"></i>
-    <i class="fa-brands fa-css3"></i>
-    <i class="fa-brands fa-sass"></i>
-    <i class="fa-brands fa-linux"></i>
-    <i class="fa-brands fa-r-project"></i>
-    <i class="fa-brands fa-js"></i>
-  </div>
+  {
+    skills && skills.length > 0 && (
+      <>
+        <h3>mis skills</h3>
+        <div class="flex justify-around gap-4 text-2xl">
+          {skills.map((skill) => (
+            <i class={skill.icon} title={skill.name} />
+          ))}
+        </div>
+      </>
+    )
+  }
 </Base>

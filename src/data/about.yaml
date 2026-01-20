@@ -1,0 +1,29 @@
+- id: profile
+  name: "Jorge Meneses"
+  title: "Sociólogo & Desarrollador Web"
+  bio: "Mi nombre es Jorge Meneses. Soy sociólogo y Mg. en gestión pública. Ahora estoy aprendiendo desarrollo web y espero convertirme pronto en un desarrollador Full-Stack. Tengo experiencia en investigación social y en el análisis de datos."
+  image: "/media/2022/03/jorge_normal.webp"
+  imageRetina: "/media/2022/03/jorge_retina.webp"
+  imageCaption: "Posando en los exteriores de la Universidad de Potsdam (2018)"
+  education:
+    - institution: "University of Potsdam"
+      degree: "Magister en gestión pública"
+      year: 2018
+      logo: "/media/2022/03/logo_up.webp"
+    - institution: "Pontificia Universidad Católica del Perú"
+      degree: "Licenciado en sociología"
+      year: 2014
+      logo: "/media/2022/03/logo_pucp.webp"
+  skills:
+    - icon: "fa-brands fa-html5"
+      name: "HTML5"
+    - icon: "fa-brands fa-css3"
+      name: "CSS3"
+    - icon: "fa-brands fa-sass"
+      name: "SASS"
+    - icon: "fa-brands fa-linux"
+      name: "Linux"
+    - icon: "fa-brands fa-r-project"
+      name: "R"
+    - icon: "fa-brands fa-js"
+      name: "JavaScript"

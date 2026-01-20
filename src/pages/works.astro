@@ -1,24 +1,30 @@
 ---
 import Base from "../layouts/base.astro";
 import WorkCard from "../components/work_card.astro";
-import data from "../../public/data/works.json";
+import { getCollection } from "astro:content";
+
+const experience = await getCollection("experience");
+experience.sort(
+  (a, b) =>
+    new Date(b.data.startDate).getTime() - new Date(a.data.startDate).getTime(),
+);
 ---
 
-<Base title="mi experiencia | jorgejhms" description="Prueba">
+<Base title="mi experiencia | jorgejhms" description="Mi experiencia laboral">
   <h2>mi experiencia</h2>
   <div
     class="flex w-full flex-col gap-4 sm:grid sm:grid-cols-[repeat(auto-fit,minmax(35ch,1fr))]"
   >
     {
-      data.map((work) => (
+      experience.map((item) => (
         <WorkCard
-          position={work.position}
-          workplace={work.workplace}
-          start_date={work.start_date}
-          end_date={work.end_date}
-          url={work.url}
-          tags={work.tags}
-          description={work.description}
+          position={item.data.position}
+          workplace={item.data.workplace}
+          start_date={item.data.startDate}
+          end_date={item.data.endDate}
+          url={item.data.url}
+          tags={item.data.tags}
+          description={item.data.description}
         />
       ))
     }

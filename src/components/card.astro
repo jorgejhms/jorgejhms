@@ -12,7 +12,7 @@ const {
   class="border-purple max-w-[40ch] min-w-[30ch] rounded-[10px] border bg-[#1d1e26] p-4 shadow-[0px_0px_3px_rgba(189,147,249,0.5)] transition-all duration-200 ease-in-out hover:shadow-[1px_2px_10px_rgba(189,147,249,0.5)]"
 >
   <div class="m-0 flex flex-wrap gap-[0.3em]">
-    {tags.map((tag) => <Tag>{tag}</Tag>)}
+    {tags.map((tag: string) => <Tag>{tag}</Tag>)}
   </div>
   <slot name="image" />
   <h3
