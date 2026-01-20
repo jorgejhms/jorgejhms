@@ -1,109 +1,337 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
-  /* Colores Dracula */
-  --color-bg: #282a36;
-  --color-text: #f8f8f2;
-  --color-selection: #44475a;
-  --color-comment: #6272a4;
-  --color-red: #ff5555;
-  --color-orange: #ffb86c;
-  --color-yellow: #f1fa8c;
-  --color-green: #50fa7b;
-  --color-purple: #bd93f9;
-  --color-purple-dark: #a8a0b2;
-  --color-cyan: #8be9fd;
-  --color-pink: #ff79c6;
-  --color-pre-bg: #100f17;
-  --color-header-bg: #414662;
-  --color-footer-bg: #0f0f0f;
-  --color-card-bg: #2f3140;
+  --font-sans:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 
-  /* Tipografía */
-  --font-sans: "Fira Sans", sans-serif;
-  --font-header: "JetBrains Mono", monospace;
-  --font-code: "Fira Code", monospace;
+  /* Dracula Theme Colors - Direct color definitions for Tailwind 4 */
+  --color-dracula-bg-dark: #15161d;
+  --color-dracula-bg: #282a36;
+  --color-dracula-current: #44475a;
+  --color-dracula-foreground: #f8f8f2;
+  --color-dracula-comment: #6272a4;
+  --color-dracula-cyan: #8be9fd;
+  --color-dracula-green: #50fa7b;
+  --color-dracula-orange: #ffb86c;
+  --color-dracula-pink: #ff79c6;
+  --color-dracula-purple: #bd93f9;
+  --color-dracula-red: #ff5555;
+  --color-dracula-yellow: #f1fa8c;
 
-  /* Sombras */
-  --shadow-dracula: 0 0 10px #bd93f98c;
+  /* Background colors */
+  --color-background: var(--color-dracula-bg-dark);
+  --color-surface: var(--color-dracula-bg);
+  --color-elevated: var(--color-dracula-current);
+
+  /* Text colors */
+  --color-foreground: var(--color-dracula-foreground);
+  --color-muted: var(--color-dracula-comment);
+
+  /* Accent colors */
+  --color-primary: var(--color-dracula-green);
+  --color-secondary: var(--color-dracula-purple);
+  --color-accent: var(--color-dracula-cyan);
+  --color-warning: var(--color-dracula-yellow);
+  --color-danger: var(--color-dracula-red);
+  --color-info: var(--color-dracula-cyan);
+  --color-success: var(--color-dracula-green);
+
+  /* Border colors */
+  --color-border: var(--color-dracula-comment);
+  --color-border-muted: rgba(98, 114, 164, 0.3);
+
+  /* Semantic color mapping */
+  --color-text-primary: var(--color-dracula-foreground);
+  --color-text-secondary: var(--color-dracula-comment);
+  --color-text-accent: var(--color-dracula-green);
+
+  /* Comments for reference */
+  --color-comment: var(--color-dracula-comment);
+
+  /* Custom spacing */
+  --space-section: 5rem;
+  --space-section-sm: 3rem;
+
+  /* Border radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Shadows with neon effects */
+  --shadow-neon-green: 0 0 10px rgba(80, 250, 123, 0.5);
+  --shadow-neon-purple: 0 0 10px rgba(189, 147, 249, 0.5);
+  --shadow-neon-cyan: 0 0 10px rgba(139, 233, 253, 0.5);
+  --shadow-neon-pink: 0 0 10px rgba(255, 121, 198, 0.5);
+
+  /* Animation durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
 }
 
-/* Estilos base globales */
 @layer base {
   * {
-    box-sizing: border-box;
+    @apply border-border;
   }
 
   html {
-    @apply bg-bg text-text font-sans;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply pb-8;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 
-  h2 {
-    @apply font-header text-cyan text-base font-light;
-
-    &::before {
-      content: "##";
-      @apply relative -left-2 text-[0.8rem] opacity-50;
-    }
+  /* Improved selection colors */
+  ::-moz-selection {
+    background: rgba(80, 250, 123, 0.25);
+    color: var(--color-dracula-foreground);
   }
 
-  h3 {
-    @apply font-header text-purple mt-[7%] text-base font-light;
-
-    &::before {
-      content: "###";
-      @apply relative -left-2 text-[0.8rem] opacity-50;
-    }
+  ::selection {
+    background: rgba(80, 250, 123, 0.25);
+    color: var(--color-dracula-foreground);
   }
 
-  h4 {
-    @apply font-normal;
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
   }
 
-  mark {
-    @apply text-green bg-transparent;
+  ::-webkit-scrollbar-track {
+    background: var(--color-dracula-bg);
   }
 
-  a {
-    @apply text-green no-underline transition-all duration-200 ease-in-out;
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-dracula-comment);
+    border-radius: 4px;
   }
 
-  a:visited {
-    @apply text-purple-dark;
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-dracula-purple);
   }
 
-  a:hover {
-    @apply text-yellow underline;
+  /* Headings */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-mono;
   }
 
-  a:active {
-    @apply text-yellow;
-  }
-
-  figure {
-    @apply mx-auto overflow-hidden;
-  }
-
-  img {
-    @apply mx-auto block h-auto max-h-full w-full object-contain;
-  }
-
-  figcaption {
-    @apply font-header text-purple-dark mt-4 text-center text-[0.8rem] font-light;
+  /* Focus rings */
+  :focus-visible {
+    @apply ring-primary/50 ring-offset-background ring-2 ring-offset-2 outline-none;
   }
 }
 
-@layer components {
-  .centered {
-    @apply text-center;
+@layer utilities {
+  /* Neon text effects */
+  .neon-text {
+    color: var(--color-dracula-green);
+    text-shadow: var(--shadow-neon-green);
   }
 
-  .transparent-bg {
-    @apply backdrop-blur-sm;
-    background-color: rgba(40, 42, 54, 0.9);
+  .neon-text-purple {
+    color: var(--color-dracula-purple);
+    text-shadow: var(--shadow-neon-purple);
+  }
+
+  .neon-text-cyan {
+    color: var(--color-dracula-cyan);
+    text-shadow: var(--shadow-neon-cyan);
+  }
+
+  .neon-text-pink {
+    color: var(--color-dracula-pink);
+    text-shadow: var(--shadow-neon-pink);
+  }
+
+  /* Neon borders */
+  .neon-border {
+    border: 1px solid var(--color-dracula-green);
+    box-shadow:
+      0 0 5px rgba(80, 250, 123, 0.4),
+      inset 0 0 5px rgba(80, 250, 123, 0.2);
+  }
+
+  .neon-border-hover {
+    transition: all var(--duration-normal) ease;
+  }
+
+  .neon-border-hover:hover {
+    border-color: var(--color-dracula-green);
+    box-shadow:
+      0 0 10px rgba(80, 250, 123, 0.6),
+      0 0 20px rgba(80, 250, 123, 0.3),
+      inset 0 0 10px rgba(80, 250, 123, 0.2);
+  }
+
+  .neon-border-purple {
+    border: 1px solid var(--color-dracula-purple);
+    box-shadow:
+      0 0 5px rgba(189, 147, 249, 0.4),
+      inset 0 0 5px rgba(189, 147, 249, 0.2);
+  }
+
+  .neon-border-cyan {
+    border: 1px solid var(--color-dracula-cyan);
+    box-shadow:
+      0 0 5px rgba(139, 233, 253, 0.4),
+      inset 0 0 5px rgba(139, 233, 253, 0.2);
+  }
+
+  .neon-border-green {
+    border: 1px solid var(--color-dracula-green);
+    box-shadow:
+      0 0 5px rgba(80, 250, 123, 0.4),
+      inset 0 0 5px rgba(80, 250, 123, 0.2);
+  }
+
+  /* Glow effects */
+  .neon-glow {
+    box-shadow: 0 0 15px rgba(80, 250, 123, 0.4);
+  }
+
+  .glow-on-hover {
+    transition: box-shadow var(--duration-normal) ease;
+  }
+
+  .glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(80, 250, 123, 0.6);
+  }
+
+  /* Background variants */
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+
+  .bg-elevated {
+    background-color: var(--color-elevated);
+  }
+
+  /* Text utilities */
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  .text-accent {
+    color: var(--color-primary);
+  }
+
+  .text-comment {
+    color: var(--color-comment);
+  }
+
+  /* Terminal-like text */
+  .terminal-prompt::before {
+    content: "$ ";
+    color: var(--color-dracula-green);
+    font-family: var(--font-mono);
+  }
+
+  .terminal-comment::before {
+    content: "// ";
+    color: var(--color-dracula-comment);
+    font-family: var(--font-mono);
+  }
+
+  /* Section spacing */
+  .section-spacing {
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
+  }
+
+  .section-spacing-sm {
+    padding-top: var(--space-section-sm);
+    padding-bottom: var(--space-section-sm);
+  }
+
+  /* Interactive elements */
+  .interactive {
+    transition: all var(--duration-normal) ease;
+    cursor: pointer;
+  }
+
+  .interactive:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Card effects */
+  .card-hover {
+    transition: all var(--duration-normal) ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-dracula {
+    background: linear-gradient(
+      135deg,
+      var(--color-dracula-bg-dark) 0%,
+      var(--color-dracula-bg) 100%
+    );
+  }
+
+  .bg-gradient-accent {
+    background: linear-gradient(
+      135deg,
+      var(--color-dracula-purple) 0%,
+      var(--color-dracula-pink) 100%
+    );
+  }
+
+  /* Loading animation */
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(80, 250, 123, 0.4);
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 20px rgba(80, 250, 123, 0.6);
+    }
+  }
+
+  /* Float animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Responsive utilities */
+  @media (max-width: 640px) {
+    .section-spacing {
+      padding-top: var(--space-section-sm);
+      padding-bottom: var(--space-section-sm);
+    }
   }
 }
