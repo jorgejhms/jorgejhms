@@ -1,0 +1,56 @@
+{
+  "category": "Backend Development",
+  "order": 2,
+  "items": [
+    {
+      "name": "Node.js",
+      "level": "Avanzado",
+      "years": 5
+    },
+    {
+      "name": "Python",
+      "level": "Avanzado",
+      "years": 6
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Avanzado",
+      "years": 4
+    },
+    {
+      "name": "MongoDB",
+      "level": "Intermedio",
+      "years": 3
+    },
+    {
+      "name": "Express.js",
+      "level": "Avanzado",
+      "years": 4
+    },
+    {
+      "name": "Prisma",
+      "level": "Avanzado",
+      "years": 2
+    },
+    {
+      "name": "GraphQL",
+      "level": "Intermedio",
+      "years": 2
+    },
+    {
+      "name": "REST APIs",
+      "level": "Experto",
+      "years": 6
+    },
+    {
+      "name": "Docker",
+      "level": "Intermedio",
+      "years": 3
+    },
+    {
+      "name": "AWS",
+      "level": "Intermedio",
+      "years": 2
+    }
+  ]
+}

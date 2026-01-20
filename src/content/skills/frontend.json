@@ -1,0 +1,56 @@
+{
+  "category": "Frontend Development",
+  "order": 1,
+  "items": [
+    {
+      "name": "Next.js",
+      "level": "Avanzado",
+      "years": 4
+    },
+    {
+      "name": "React",
+      "level": "Avanzado",
+      "years": 5
+    },
+    {
+      "name": "Astro",
+      "level": "Avanzado",
+      "years": 2
+    },
+    {
+      "name": "TypeScript",
+      "level": "Avanzado",
+      "years": 4
+    },
+    {
+      "name": "Tailwind CSS",
+      "level": "Experto",
+      "years": 3
+    },
+    {
+      "name": "JavaScript",
+      "level": "Experto",
+      "years": 8
+    },
+    {
+      "name": "HTML5",
+      "level": "Experto",
+      "years": 10
+    },
+    {
+      "name": "CSS3",
+      "level": "Avanzado",
+      "years": 10
+    },
+    {
+      "name": "Vue.js",
+      "level": "Intermedio",
+      "years": 2
+    },
+    {
+      "name": "Svelte",
+      "level": "Básico",
+      "years": 1
+    }
+  ]
+}

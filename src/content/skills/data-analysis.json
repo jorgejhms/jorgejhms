@@ -1,0 +1,76 @@
+{
+  "category": "Data Analysis & Statistics",
+  "order": 3,
+  "items": [
+    {
+      "name": "R",
+      "level": "Experto",
+      "years": 8
+    },
+    {
+      "name": "Python (Data Science)",
+      "level": "Avanzado",
+      "years": 5
+    },
+    {
+      "name": "SQL",
+      "level": "Experto",
+      "years": 7
+    },
+    {
+      "name": "ggplot2",
+      "level": "Experto",
+      "years": 6
+    },
+    {
+      "name": "Shiny",
+      "level": "Avanzado",
+      "years": 5
+    },
+    {
+      "name": "RMarkdown",
+      "level": "Experto",
+      "years": 6
+    },
+    {
+      "name": "Pandas",
+      "level": "Avanzado",
+      "years": 4
+    },
+    {
+      "name": "NumPy",
+      "level": "Avanzado",
+      "years": 4
+    },
+    {
+      "name": "Matplotlib",
+      "level": "Intermedio",
+      "years": 3
+    },
+    {
+      "name": "Plotly",
+      "level": "Avanzado",
+      "years": 4
+    },
+    {
+      "name": "Jupyter Notebooks",
+      "level": "Avanzado",
+      "years": 4
+    },
+    {
+      "name": "Statistical Modeling",
+      "level": "Experto",
+      "years": 8
+    },
+    {
+      "name": "Machine Learning",
+      "level": "Intermedio",
+      "years": 3
+    },
+    {
+      "name": "Epidemiología",
+      "level": "Experto",
+      "years": 10
+    }
+  ]
+}

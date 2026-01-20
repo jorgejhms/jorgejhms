@@ -1,0 +1,55 @@
+name: "Jorge Meneses"
+username: "jorgejhms"
+title: "Senior Web Developer"
+bio: "Senior web developer specializing in Astro, Next.js, and data storytelling with R."
+heroDescription: "Especializado en crear aplicaciones web modernas con Next.js y Astro. Experiencia en análisis estadístico con R y visualización de datos."
+motto: "Construyendo el futuro, una línea de código a la vez"
+email: "jorge@jorgejhms.net"
+
+availability:
+  status: "available"
+  message: "Disponible para nuevos proyectos"
+  responseTime: "< 24h"
+  responseText: "Escribe directamente o conéctame en redes. Respondo en menos de 24h."
+
+socials:
+  github:
+    url: "https://github.com/jorgejhms"
+    display: "@jorgejhms"
+  linkedin:
+    url: "https://linkedin.com/in/jorgejhms"
+    display: "linkedin.com/in/jorgejhms"
+
+navLinks:
+  - href: "/"
+    label: "Home"
+    icon: "home"
+  - href: "/works"
+    label: "Experiencia"
+    icon: "code"
+  - href: "/about"
+    label: "Sobre mí"
+    icon: "user"
+
+site:
+  url: "https://jorgejhms.net"
+  ogImage: "/og-image.png"
+  favicon: "/favicon.svg"
+
+services:
+  - title: "Desarrollo de aplicaciones web con Next.js y Astro"
+    description: "Aplicaciones modernas, performantes y escalables"
+  - title: "Análisis de datos y visualizaciones con R"
+    description: "Transformación de datos complejos en insights visuales"
+  - title: "Consultoría técnica y code reviews"
+    description: "Mejora de arquitectura y mejores prácticas"
+  - title: "Mentoring en desarrollo frontend"
+    description: "Acompañamiento personalizado en tu crecimiento profesional"
+
+ctas:
+  - href: "/works"
+    label: "Ver experiencia"
+    icon: "arrow-right"
+  - href: "mailto:jorge@jorgejhms.net"
+    label: "Contactar"
+    icon: "mail"
