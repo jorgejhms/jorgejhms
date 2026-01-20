@@ -110,4 +110,25 @@ const skills = defineCollection({
   }),
 });
 
-export const collections = { experience, about, site, projects, skills };
+const playground = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/playground" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    technologies: z.array(z.string()),
+    liveUrl: z.string().url().optional(),
+    githubUrl: z.string().url().optional(),
+    image: z.string().optional(),
+    featured: z.boolean().default(false),
+    order: z.number().default(0),
+  }),
+});
+
+export const collections = {
+  experience,
+  about,
+  site,
+  projects,
+  skills,
+  playground,
+};
