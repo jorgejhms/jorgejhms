@@ -1,8 +1,14 @@
+// @ts-check
+import { defineConfig } from "astro/config";
+
 // Full Astro Configuration API Documentation:
 // https://docs.astro.build/reference/configuration-reference
 
-import { defineConfig } from 'astro/config';
+export default defineConfig({
+  output: "static",
+  vite: {
+    plugins: [],
+  },
 
-export default {
-	site: 'https://amazing-moonbeam-80387c.netlify.app/'
-}
+  site: "https://jorgejhms.net",
+});
