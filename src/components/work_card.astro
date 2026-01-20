@@ -1,20 +1,152 @@
 ---
-import Card from "../components/card.astro";
-const {
-  position = "Posición?",
-  workplace = "Empresa?",
-  start_date = "Fecha?",
-  end_date = "Fecha?",
-  url = "#",
-  tags = ["?"],
-  description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis molestiae debitis quidem pariatur possimus consequuntur, soluta velit eos similique! Sapiente quas accusantium id fuga dignissimos?",
-} = Astro.props;
+import type { CollectionEntry } from "astro:content";
+import Button from "./button.astro";
 
-const date = start_date + " / " + end_date;
+// Use a more generic interface that covers the experience collection data
+export interface Props {
+  position: string;
+  workplace: string;
+  start_date: string;
+  end_date: string;
+  url: string;
+  tags: string[];
+  description: string;
+}
+
+const { position, workplace, start_date, end_date, url, tags, description } =
+  Astro.props;
+
+// Helper to format dates (assuming YYYY-MM-DD or similar standard format)
+const formatDate = (dateString: string) => {
+  try {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat("es-ES", {
+      month: "short",
+      year: "numeric",
+    }).format(date);
+  } catch (e) {
+    return dateString;
+  }
+};
+
+const formattedStart = formatDate(start_date);
+const formattedEnd = end_date.toLowerCase() === "present" ? "Presente" : formatDate(end_date);
+
+const badgeColors = [
+  "neon-border-green bg-primary/10 text-primary",
+  "neon-border-purple bg-secondary/10 text-secondary",
+  "neon-border-cyan bg-accent/10 text-accent",
+  "bg-warning/10 text-warning border border-warning/30",
+  "bg-danger/10 text-danger border border-danger/30",
+];
 ---
 
-<Card title={position} {tags} {date} {description}>
-  <p class="font-header my-[0.2em] font-black" slot="subtitle">
-    <a href={url} class="text-purple">{workplace}</a>
-  </p>
-</Card>
+<article
+  class="group bg-surface border-border hover:bg-elevated hover:border-primary/50 card-hover relative h-full rounded-lg border p-6 transition-all duration-300"
+>
+  <!-- Work Header -->
+  <header class="mb-4">
+    <div class="mb-2 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+      <h3
+        class="text-foreground group-hover:text-primary font-mono text-xl font-semibold transition-colors"
+      >
+        {position}
+      </h3>
+      
+      <!-- Date Badge -->
+      <div class="text-muted font-mono text-xs whitespace-nowrap bg-elevated/50 px-2 py-1 rounded border border-border/50">
+        {formattedStart} — {formattedEnd}
+      </div>
+    </div>
+
+    <div class="text-secondary font-mono text-sm mb-3">
+      <span class="text-comment">@ </span>
+      <span>{workplace}</span>
+    </div>
+  </header>
+
+  <!-- Description -->
+  <div class="mb-6 flex-1">
+    <p class="text-foreground/80 text-sm leading-relaxed md:text-base">
+      {description}
+    </p>
+  </div>
+
+  <!-- Technologies/Tags -->
+  <div class="mb-6">
+    <div class="text-muted mb-3 font-mono text-xs">
+      <span class="text-primary">$</span> skills --list
+    </div>
+    <ul class="flex flex-wrap gap-2 font-mono text-xs">
+      {
+        tags.map((tag, index) => (
+          <li
+            class={`rounded-full px-3 py-1.5 transition-all duration-200 hover:scale-105 ${badgeColors[index % badgeColors.length]}`}
+          >
+            {tag}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <!-- Action Buttons -->
+  <footer
+    class="border-border/50 flex flex-col gap-3 border-t pt-4 sm:flex-row"
+  >
+    <div class="flex flex-1 gap-3">
+      {
+        url && (
+          <Button
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outline"
+            size="sm"
+            class="group/btn flex-1"
+          >
+            <svg
+              class="h-4 w-4 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+            Website
+          </Button>
+        )
+      }
+    </div>
+  </footer>
+
+  <!-- Terminal output indicator -->
+  <div class="text-muted/30 absolute right-2 bottom-2 font-mono text-xs">
+    <span class="text-success">●</span>
+  </div>
+</article>
+
+<style>
+  /* Custom hover effects for the card */
+  .card-hover:hover {
+    box-shadow: 0 8px 25px rgba(80, 250, 123, 0.15);
+  }
+
+  /* Subtle glow effect on hover */
+  .card-hover:hover .neon-border-green {
+    box-shadow: 0 0 10px rgba(80, 250, 123, 0.3);
+  }
+
+  .card-hover:hover .neon-border-purple {
+    box-shadow: 0 0 10px rgba(189, 147, 249, 0.3);
+  }
+
+  .card-hover:hover .neon-border-cyan {
+    box-shadow: 0 0 10px rgba(139, 233, 253, 0.3);
+  }
+</style>
