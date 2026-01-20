@@ -26,34 +26,32 @@
 - `.astro` files use frontmatter fence `---` for imports and logic
 - Place imports at top of frontmatter section
 - Destructure props from `Astro.props` with defaults
-- Styles section uses `<style lang="scss">` with SCSS modules
 - Client-side scripts go in `<script>` tags at bottom of file
 
 ### Imports
 
-- Use relative imports for local components: `import Button from "../components/button.astro"`
-- SCSS imports use `@use` syntax: `@use "../scss/_mixins" as mixin`
-- Node modules: `import "../../node_modules/normalize.css/normalize.css"`
+- Use relative imports for local components: `import Button from "./Button.astro"`
+- Tailwind CSS v4 is used for styling (not SCSS)
+- Content collections imported via `getCollection("collectionName")`
 
 ### Formatting
 
 - Always run `bun run format` before committing
-- Prettier handles all formatting (prettier-plugin-astro for .astro files)
+- Prettier handles all formatting
 - ESLint enforces code quality rules
 - Follow Prettier default formatting (2-space indentation, single quotes, etc.)
 
 ### Naming Conventions
 
-- Components: PascalCase (Button.astro, Header.astro)
+- Components: PascalCase (Button.astro, Navigation.astro, ProjectCard.astro)
 - Variables/props: camelCase (menu, href, title)
-- SCSS partials: underscore prefix (\_mixins.scss)
 - CSS classes: kebab-case (card, mobile-menu-wrapper)
 - IDs: kebab-case (mobile-menu-icon, logo_title)
-- CSS variables: kebab-case with prefix (--color-green, --font-base)
+- Collection entries: kebab-case or snake_case as configured
 
 ### Types
 
-- TypeScript strict mode enabled (follow astro/tsconfigs/strict)
+- TypeScript strict mode enabled
 - Define interfaces for complex props: `interface Props { href?: string }`
 - Type Astro components explicitly: `const props: Props = Astro.props`
 - Use TypeScript annotations for all function parameters and return types
@@ -61,19 +59,19 @@
 
 ### Styling
 
-- Use SCSS with `lang="scss"` attribute
-- Import mixins with `@use` alias: `@use "../scss/_mixins" as mixin`
-- Use mixins for responsive design: `@include mixin.tablet-plus()`
-- Access CSS custom properties with `var()`: `color: var(--color-green)`
-- Nest selectors using SCSS syntax
+- Use Tailwind CSS utility classes
+- Custom CSS variables defined in `@theme` in global.css
+- Tailwind v4 with `@theme` directive in global.css
+- Use `@plugin "@tailwindcss/typography"` for prose content
+- Access CSS custom properties with `var()`: `color: var(--color-primary)`
 
 ### Patterns
 
 - Define default props with destructuring in frontmatter
 - Use `<slot />` for children content
-- Named slots: `<slot name="image" />`
-- Array mapping for lists: `{menu.map((item) => <li>{item.text}</li>)}`
-- Event handlers in client scripts: `mobileMenuIcon.onclick = () => {}`
+- Array mapping for lists: `{items.map((item) => <li>{item.name}</li>)}`
+- Event handlers in client scripts: `element.onclick = () => {}`
+- Content collections loaded with `getCollection()` in frontmatter
 
 ### Language
 
@@ -83,13 +81,41 @@
 
 ### Accessibility
 
-- Use semantic HTML elements (nav, header, main, footer, article)
-- Follow accessibility rules (eslint-plugin-jsx-a11y configured)
+- Use semantic HTML elements (nav, header, main, article)
 - Provide proper alt text for images
+- ARIA labels for interactive elements
 
 ### Design System
 
-- Dracula color palette with CSS custom properties
-- Font families: Fira Sans (base), JetBrains Mono (header), Fira Code (special)
-- Responsive breakpoint at 37.5rem (tablet-plus mixin)
+- Dracula/Cyberpunk color palette with neon effects
+- Font families: Inter (base), JetBrains Mono (code/headers)
+- Custom utilities in global.css: `.neon-text`, `.neon-border`, `.section-spacing`
 - CSS transitions: `transition: all 0.2s ease-in-out`
+- Background colors: `--color-background`, `--color-surface`, `--color-elevated`
+- Text colors: `--color-foreground`, `--color-muted`
+- Accent colors: `--color-primary`, `--color-secondary`, `--color-accent`
+
+### Content Collections
+
+- `site`: Global site configuration (navLinks, socials, services, ctas, availability)
+- `projects`: Portfolio projects with markdown content (frontmatter + body)
+- `skills`: Skills organized by category in JSON files
+- `experience`: Work experience loaded from YAML file
+- `about`: Profile information loaded from YAML file
+
+### Components Architecture
+
+- `Navigation`: Top navigation with mobile menu
+- `Hero`: Hero section with profile info and CTAs
+- `Projects`: Featured projects grid section
+- `About`: Skills section displaying capabilities
+- `Contact`: Contact methods and availability status
+- `ProjectCard`: Individual project display component
+- `WorkCard`: Experience/workplace card component
+- `Button`: Reusable button with variants (primary, outline, ghost, link)
+
+### Layout Structure
+
+- `base.astro`: Main layout with navigation and main content area
+- No sidebar - uses top navigation bar
+- Main content has full-width, no max-width constraint by default
