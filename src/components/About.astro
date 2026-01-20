@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+
+const skillsData = await getCollection("skills");
+const sortedSkills = skillsData.sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="about" class="section-spacing" aria-labelledby="about-heading">
+  <div class="container mx-auto px-6">
+    <div class="mb-12 flex flex-col gap-6">
+      <div class="text-muted font-mono text-sm">
+        <span class="text-primary">$</span> cat skills
+      </div>
+
+      <h2
+        id="about-heading"
+        class="font-mono text-3xl font-bold md:text-4xl lg:text-5xl"
+      >
+        <span class="text-foreground">{">"} Mis </span>
+        <span class="neon-text-purple">Skills</span>
+      </h2>
+
+      <p
+        class="text-foreground/80 max-w-2xl text-base leading-relaxed md:text-lg"
+      >
+        Stack tecnológico que utilizo para desarrollar soluciones web performantes
+        y escalables.
+      </p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        sortedSkills.map((skill) => (
+          <div class="bg-surface border-border hover:border-primary/50 rounded-lg border p-6 transition-all duration-300">
+            <div class="mb-4">
+              <div class="text-accent font-mono text-sm mb-2">
+                {skill.data.category}
+              </div>
+              <div class="space-y-2">
+                {
+                  skill.data.items.map((item) => (
+                    <div class="flex items-start gap-3">
+                      <span class="text-muted text-xs">{item.level}</span>
+                      <span class="text-foreground text-sm font-medium">{item.name}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
