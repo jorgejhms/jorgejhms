@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import SectionHeader from "./SectionHeader.astro";
 
 // Get all playground items
 const playgroundItems = await getCollection("playground");
@@ -15,14 +16,13 @@ const featured = sorted.filter((item) => item.data.featured === true);
 
 <section class="section-spacing" id="playground">
   <div class="container mx-auto max-w-5xl px-6">
-    <div class="mb-12 space-y-4">
-      <h2 class="neon-text font-mono text-3xl font-bold md:text-4xl">
-        <span class="text-primary mr-2">&gt;</span> Playground
-      </h2>
-      <p class="text-muted font-mono text-sm">
-        <span class="text-comment">//</span> Experimentos técnicos y demostraciones de skills
-      </p>
-    </div>
+    <SectionHeader
+      command="cd playground"
+      title=""
+      highlight="Playground"
+      description="Experimentos técnicos y demostraciones de skills"
+      neonColor="secondary"
+    />
 
     <div class="grid grid-cols-1 gap-8">
       {
