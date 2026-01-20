@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Button from "./button.astro";
+import Button from "./Button.astro";
 
 export interface Props {
   project: CollectionEntry<"projects">;
@@ -26,27 +26,27 @@ const slug = project.id;
   <!-- Featured badge -->
   {
     data.featured && (
-        <div class="absolute -top-2 -right-2 z-10">
-          <div class="bg-primary text-background rounded-full px-2 py-1 font-mono text-xs font-medium">
-            Featured
-          </div>
+      <div class="absolute -top-2 -right-2 z-10">
+        <div class="bg-primary text-background rounded-full px-2 py-1 font-mono text-xs font-medium">
+          Featured
         </div>
-      )
+      </div>
+    )
   }
 
   <!-- Project Image (if available) -->
   {
     data.image && (
-        <div class="bg-elevated/50 relative mb-4 overflow-hidden rounded-md">
-          <img
-            src={data.image}
-            alt={`Screenshot of ${data.title}`}
-            class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            loading="lazy"
-          />
-          <div class="from-background/60 absolute inset-0 bg-gradient-to-t to-transparent" />
-        </div>
-      )
+      <div class="bg-elevated/50 relative mb-4 overflow-hidden rounded-md">
+        <img
+          src={data.image}
+          alt={`Screenshot of ${data.title}`}
+          class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div class="from-background/60 absolute inset-0 bg-gradient-to-t to-transparent" />
+      </div>
+    )
   }
 
   <!-- Project Header -->
@@ -142,7 +142,7 @@ const slug = project.id;
 
     <!-- Project detail link -->
     <Button
-      href={`/works/${slug}`}
+      href={`/experience/${slug}`}
       variant="ghost"
       size="sm"
       class="text-muted hover:text-primary"

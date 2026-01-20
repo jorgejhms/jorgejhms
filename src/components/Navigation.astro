@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-// Explicitly type the collection query or cast the result if needed, 
+// Explicitly type the collection query or cast the result if needed,
 // though Astro's content layer should handle this if types are generated.
 // We'll use a safer access pattern.
 const siteCollection = await getCollection("site");
@@ -33,7 +33,7 @@ const socialLinks = [
   <div class="container mx-auto flex items-center justify-between px-6 py-6">
     <!-- Logo -->
     <a
-      href="/"
+      href="#home"
       class="text-primary hover:text-secondary group font-mono text-lg font-semibold transition-colors"
       aria-label={`${siteData.name} - Inicio`}
     >
@@ -49,7 +49,7 @@ const socialLinks = [
     <div class="hidden items-center gap-8 md:flex">
       <ul class="flex items-center gap-6 font-mono text-sm">
         {
-          links.map(({ href, label }: { href: string, label: string }) => (
+          links.map(({ href, label }: { href: string; label: string }) => (
             <li>
               <a
                 href={href}
@@ -136,7 +136,7 @@ const socialLinks = [
       <!-- Mobile Navigation Links -->
       <nav class="space-y-4">
         {
-          links.map(({ href, label }: { href: string, label: string }) => (
+          links.map(({ href, label }: { href: string; label: string }) => (
             <a
               href={href}
               class="text-foreground/80 hover:text-primary mobile-link block py-2 font-mono transition-colors"
@@ -252,21 +252,19 @@ const socialLinks = [
     }
   });
 
-  // Smooth scrolling for anchor links (if any remain)
+  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
-      // e.preventDefault(); // Don't prevent default for normal links
+      e.preventDefault();
       const href = (anchor as HTMLAnchorElement).getAttribute("href");
       if (href && href.startsWith("#") && href.length > 1) {
-          // Only smooth scroll if it's strictly an anchor on the same page
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-          }
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
       }
     });
   });

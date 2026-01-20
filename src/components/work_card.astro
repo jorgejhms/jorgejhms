@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Button from "./button.astro";
+import Button from "./Button.astro";
 
 // Use a more generic interface that covers the experience collection data
 export interface Props {
@@ -30,7 +30,8 @@ const formatDate = (dateString: string) => {
 };
 
 const formattedStart = formatDate(start_date);
-const formattedEnd = end_date.toLowerCase() === "present" ? "Presente" : formatDate(end_date);
+const formattedEnd =
+  end_date.toLowerCase() === "present" ? "Presente" : formatDate(end_date);
 
 const badgeColors = [
   "neon-border-green bg-primary/10 text-primary",
@@ -46,20 +47,24 @@ const badgeColors = [
 >
   <!-- Work Header -->
   <header class="mb-4">
-    <div class="mb-2 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+    <div
+      class="mb-2 flex flex-col justify-between gap-2 sm:flex-row sm:items-start"
+    >
       <h3
         class="text-foreground group-hover:text-primary font-mono text-xl font-semibold transition-colors"
       >
         {position}
       </h3>
-      
+
       <!-- Date Badge -->
-      <div class="text-muted font-mono text-xs whitespace-nowrap bg-elevated/50 px-2 py-1 rounded border border-border/50">
+      <div
+        class="text-muted bg-elevated/50 border-border/50 rounded border px-2 py-1 font-mono text-xs whitespace-nowrap"
+      >
         {formattedStart} — {formattedEnd}
       </div>
     </div>
 
-    <div class="text-secondary font-mono text-sm mb-3">
+    <div class="text-secondary mb-3 font-mono text-sm">
       <span class="text-comment">@ </span>
       <span>{workplace}</span>
     </div>
@@ -106,7 +111,7 @@ const badgeColors = [
             class="group/btn flex-1"
           >
             <svg
-              class="h-4 w-4 mr-2"
+              class="mr-2 h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
