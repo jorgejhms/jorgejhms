@@ -15,7 +15,7 @@ const columns = [
 ---
 
 <section id="about" class="section-spacing" aria-labelledby="about-heading">
-  <div class="container mx-auto px-6">
+  <div class="container mx-auto max-w-5xl px-6">
     <SectionHeader
       command="cat skills"
       title="Mis"
@@ -24,18 +24,19 @@ const columns = [
       neonColor="purple"
     />
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
       {
         columns.map((columnSkills, colIndex) => (
           <div class="space-y-6">
             {columnSkills.map((skill, idx) => (
               <div class="space-y-2">
                 <div class="text-muted font-mono text-xs">
-                  <span class="text-primary">$</span> skills --{skill.data.category.toLowerCase().replace(/\s+/g, '-')}
+                  <span class="text-primary">$</span> skills --
+                  {skill.data.category.toLowerCase().replace(/\s+/g, "-")}
                 </div>
                 <div class="space-y-1">
                   {skill.data.items.map((item) => (
-                    <div class="text-foreground text-sm font-mono">
+                    <div class="text-foreground font-mono text-sm">
                       <span class="text-primary">→</span> {item.name}
                     </div>
                   ))}
