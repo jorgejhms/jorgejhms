@@ -4,7 +4,7 @@ interface Props {
   title: string;
   highlight: string;
   description?: string;
-  neonColor?: 'green' | 'purple' | 'cyan' | 'pink';
+  neonColor?: "green" | "purple" | "cyan" | "pink";
 }
 
 const {
@@ -12,20 +12,21 @@ const {
   title,
   highlight,
   description,
-  neonColor = 'green',
+  neonColor = "green",
 } = Astro.props;
 
 const neonClass = {
-  green: 'neon-text',
-  purple: 'neon-text-purple',
-  cyan: 'neon-text-cyan',
-  pink: 'neon-text-pink',
+  green: "neon-text",
+  purple: "neon-text-purple",
+  cyan: "neon-text-cyan",
+  pink: "neon-text-pink",
 }[neonColor];
 ---
 
 <div class="mb-12 flex flex-col gap-6">
-  <div class="font-mono text-sm text-muted">
-    <span class="text-primary">$</span> {command}
+  <div class="text-muted font-mono text-sm">
+    <span class="text-primary">$</span>
+    {command}
   </div>
 
   <h2 class="font-mono text-3xl font-bold md:text-4xl lg:text-5xl">
@@ -35,7 +36,7 @@ const neonClass = {
 
   {
     description && (
-      <p class="max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
+      <p class="text-foreground/80 max-w-2xl text-base leading-relaxed md:text-lg">
         {description}
       </p>
     )

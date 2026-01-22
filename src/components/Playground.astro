@@ -27,9 +27,9 @@ const featured = sorted.filter((item) => item.data.featured === true);
     <div class="grid grid-cols-1 gap-8">
       {
         featured.map((item) => (
-          <div class="group relative overflow-hidden rounded-lg border border-secondary/30 bg-surface transition-all hover:border-secondary/50 hover:shadow-lg hover:shadow-secondary/20">
+          <div class="group border-secondary/30 bg-surface hover:border-secondary/50 hover:shadow-secondary/20 relative overflow-hidden rounded-lg border transition-all hover:shadow-lg">
             {/* Decorative top border */}
-            <div class="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-secondary via-accent to-primary opacity-0 transition-opacity group-hover:opacity-100" />
+            <div class="from-secondary via-accent to-primary absolute top-0 left-0 h-1 w-full bg-gradient-to-r opacity-0 transition-opacity group-hover:opacity-100" />
 
             <div class="flex flex-col md:flex-row">
               {/* Content side */}
@@ -38,33 +38,34 @@ const featured = sorted.filter((item) => item.data.featured === true);
                   {/* Title with type badge */}
                   <div class="flex items-start gap-3">
                     <div class="flex-1">
-                      <h3 class="text-xl font-bold text-foreground md:text-2xl">
+                      <h3 class="text-foreground text-xl font-bold md:text-2xl">
                         {item.data.title}
                       </h3>
-                      <p class="mt-2 text-sm text-foreground/70">
+                      <p class="text-foreground/70 mt-2 text-sm">
                         {item.data.description}
                       </p>
                     </div>
-                    <span class="whitespace-nowrap rounded-full bg-secondary/20 px-3 py-1 text-xs font-semibold text-secondary">
+                    <span class="bg-secondary/20 text-secondary rounded-full px-3 py-1 text-xs font-semibold whitespace-nowrap">
                       Playground
                     </span>
                   </div>
 
                   {/* Technologies */}
-                  {item.data.technologies && item.data.technologies.length > 0 && (
-                    <div class="space-y-2">
-                      <p class="text-xs font-mono text-muted">
-                        <span class="text-comment">#</span> Stack
-                      </p>
-                      <div class="flex flex-wrap gap-2">
-                        {item.data.technologies.map((tech: string) => (
-                          <span class="inline-flex rounded-lg bg-background px-2 py-1 text-xs font-mono text-primary/80 border border-primary/20">
-                            {tech}
-                          </span>
-                        ))}
+                  {item.data.technologies &&
+                    item.data.technologies.length > 0 && (
+                      <div class="space-y-2">
+                        <p class="text-muted font-mono text-xs">
+                          <span class="text-comment">#</span> Stack
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                          {item.data.technologies.map((tech: string) => (
+                            <span class="bg-background text-primary/80 border-primary/20 inline-flex rounded-lg border px-2 py-1 font-mono text-xs">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
 
                   {/* Links */}
                   <div class="flex flex-wrap gap-3 pt-4">
@@ -73,7 +74,7 @@ const featured = sorted.filter((item) => item.data.featured === true);
                         href={item.data.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 rounded-lg bg-secondary/20 px-3 py-2 text-sm font-mono font-semibold text-secondary transition-all hover:bg-secondary/30"
+                        class="bg-secondary/20 text-secondary hover:bg-secondary/30 inline-flex items-center gap-2 rounded-lg px-3 py-2 font-mono text-sm font-semibold transition-all"
                       >
                         <svg
                           class="h-4 w-4"
@@ -96,7 +97,7 @@ const featured = sorted.filter((item) => item.data.featured === true);
                         href={item.data.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 rounded-lg bg-muted/20 px-3 py-2 text-sm font-mono font-semibold text-muted transition-all hover:bg-muted/30"
+                        class="bg-muted/20 text-muted hover:bg-muted/30 inline-flex items-center gap-2 rounded-lg px-3 py-2 font-mono text-sm font-semibold transition-all"
                       >
                         <svg
                           class="h-4 w-4"
@@ -118,28 +119,30 @@ const featured = sorted.filter((item) => item.data.featured === true);
     </div>
 
     {/* View all link */}
-    {sorted.length > featured.length && (
-      <div class="mt-8 text-center">
-        <a
-          href="/playground"
-          class="inline-flex items-center gap-2 rounded-lg border border-secondary/30 px-4 py-2 font-mono text-sm font-semibold text-secondary transition-all hover:bg-secondary/10"
-        >
-          Ver todos los experimentos
-          <svg
-            class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+    {
+      sorted.length > featured.length && (
+        <div class="mt-8 text-center">
+          <a
+            href="/playground"
+            class="border-secondary/30 text-secondary hover:bg-secondary/10 inline-flex items-center gap-2 rounded-lg border px-4 py-2 font-mono text-sm font-semibold transition-all"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </a>
-      </div>
-    )}
+            Ver todos los experimentos
+            <svg
+              class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
+          </a>
+        </div>
+      )
+    }
   </div>
 </section>
