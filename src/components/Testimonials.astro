@@ -14,21 +14,24 @@ const testimonials: Testimonial[] = [
     name: "Cliente Placeholder 1",
     company: "Empresa Ejemplo",
     role: "CEO / Founder",
-    quote: "Testimonio placeholder: Describa cómo Jorge ayudó a su empresa. Mencione el impacto técnico y de negocio.",
+    quote:
+      "Testimonio placeholder: Describa cómo Jorge ayudó a su empresa. Mencione el impacto técnico y de negocio.",
     image: "/testimonials/placeholder-1.jpg",
   },
   {
     name: "Cliente Placeholder 2",
     company: "Startup Tech",
     role: "CTO",
-    quote: "Testimonio placeholder: Explique la calidad del trabajo, la comunicación, y resultados entregados.",
+    quote:
+      "Testimonio placeholder: Explique la calidad del trabajo, la comunicación, y resultados entregados.",
     image: "/testimonials/placeholder-2.jpg",
   },
   {
     name: "Cliente Placeholder 3",
     company: "Agencia Digital",
     role: "Project Manager",
-    quote: "Testimonio placeholder: Destaque habilidades técnicas, atención al detalle, y capacidad de resolver problemas.",
+    quote:
+      "Testimonio placeholder: Destaque habilidades técnicas, atención al detalle, y capacidad de resolver problemas.",
     image: "/testimonials/placeholder-3.jpg",
   },
 ];
@@ -47,73 +50,41 @@ const testimonials: Testimonial[] = [
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {
         testimonials.map((testimonial) => (
-          <div class="group relative overflow-hidden rounded-lg border border-primary/40 bg-surface transition-all hover:border-primary/60 hover:shadow-lg hover:shadow-primary/20">
+          <div class="group border-primary/40 bg-surface hover:border-primary/60 hover:shadow-primary/20 relative overflow-hidden rounded-lg border transition-all hover:shadow-lg">
             {/* Top accent line */}
-            <div class="h-1 w-0 bg-primary transition-all group-hover:w-full" />
+            <div class="bg-primary h-1 w-0 transition-all group-hover:w-full" />
 
-            <div class="p-6 flex flex-col h-full">
+            <div class="flex h-full flex-col p-6">
               {/* Author info */}
-              <div class="flex items-center gap-3 mb-4 pb-4 border-b border-primary/20">
+              <div class="border-primary/20 mb-4 flex items-center gap-3 border-b pb-4">
                 {testimonial.image && (
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    class="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0"
+                    class="from-primary to-accent h-12 w-12 flex-shrink-0 rounded-full bg-gradient-to-br"
                   />
                 )}
                 <div class="min-w-0">
-                  <p class="font-mono text-sm font-bold text-foreground leading-tight">
+                  <p class="text-foreground font-mono text-sm leading-tight font-bold">
                     {testimonial.name}
                   </p>
-                  <p class="text-xs text-muted leading-tight">
+                  <p class="text-muted text-xs leading-tight">
                     {testimonial.role}
                   </p>
-                  <p class="text-xs text-muted/70 leading-tight">
+                  <p class="text-muted/70 text-xs leading-tight">
                     {testimonial.company}
                   </p>
                 </div>
               </div>
 
               {/* Quote text */}
-              <p class="text-foreground/80 leading-relaxed text-sm flex-1">
+              <p class="text-foreground/80 flex-1 text-sm leading-relaxed">
                 "{testimonial.quote}"
               </p>
             </div>
           </div>
         ))
       }
-    </div>
-
-    {/* Call to action - Flat design */}
-    <div class="mt-16 pt-12 border-t border-primary/20 text-center">
-      <p class="text-muted font-mono text-sm mb-2">
-        <span class="text-primary">//</span> ¿Necesitas un desarrollador para tu proyecto?
-      </p>
-      <h3 class="text-2xl font-bold text-foreground mb-3">
-        Contactemos para discutir tu idea
-      </h3>
-      <p class="text-sm text-foreground/70 mb-6">
-        Disponible para consultoría, proyectos fullstack y análisis de datos.
-      </p>
-      <a
-        href="#contact"
-        class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-mono text-sm font-semibold text-background transition-all hover:shadow-lg hover:shadow-primary/50"
-      >
-        Iniciar conversación
-        <svg
-          class="h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"
-          />
-        </svg>
-      </a>
     </div>
   </div>
 </section>
