@@ -27,6 +27,7 @@ Cambios Alfa se posiciona como socio confiable en operaciones de cambio de divis
 ## Características Principales
 
 ### Para Usuarios
+
 - **Conversor de divisas** intuitivo y en tiempo real
 - **Histórico de tasas** para análisis de tendencias
 - **Múltiples métodos de pago** (transferencia, billetera, efectivo)
@@ -34,6 +35,7 @@ Cambios Alfa se posiciona como socio confiable en operaciones de cambio de divis
 - **Soporte 24/7** en múltiples canales
 
 ### Para Operaciones
+
 - **Dashboard de administración** con analytics avanzado
 - **Sistema de compliance** integrado
 - **Trazabilidad completa** de transacciones

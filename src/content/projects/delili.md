@@ -20,18 +20,21 @@ Delili busca transformar la manera en que los niños experimentan la lectura, co
 ## Arquitectura del Producto
 
 ### 1. Plataforma de Lectura
+
 - **Historias interactivas** con elementos gamificados
 - **Personajes recurrentes** que crean conexión emocional
 - **Sistema de progresión** que motiva continuidad
 - **Interfaz intuitiva** diseñada específicamente para niños
 
 ### 2. Tienda de Contenido
+
 - **Biblioteca digital** de historias
 - **Sistema de suscripción** para acceso ilimitado
 - **Compra de productos físicos** relacionados (libros, merchandise)
 - **Recomendaciones personalizadas** basadas en preferencias
 
 ### 3. Comunidad
+
 - **Perfiles de usuario** para seguimiento de progreso
 - **Sistema de logros** que reconoce avances
 - **Interacción entre padres e hijos** en la plataforma

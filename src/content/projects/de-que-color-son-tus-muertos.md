@@ -20,21 +20,25 @@ Facilitar acceso a información sobre desapariciones forzadas, permitiendo a inv
 ## Estructura del Proyecto
 
 ### 1. Mapa Interactivo
+
 - **Ubicación geográfica** de casos documentados
 - **Filtros por región, período, y tipo de caso**
 - **Información detallada** accesible desde ubicación
 
 ### 2. Base de Datos de Casos
+
 - **Registros estructurados** con información sistemática
 - **Fuentes verificables** para cada caso
 - **Timeline individual** de eventos
 
 ### 3. Línea de Tiempo Histórica
+
 - **Contexto histórico** de periodos de violencia
 - **Eventos clave** documentados
 - **Análisis de patrones** temporales
 
 ### 4. Narrativas de Resistencia
+
 - **Historias de familias** que buscaron justicia
 - **Luchas por memoria** y reconocimiento
 - **Impacto actual** de desapariciones

@@ -16,6 +16,7 @@ Portfolio personal desarrollado con Astro 4, diseñado para demostrar expertise 
 ## Propósito
 
 Más que un simple CV digital, este portfolio es un laboratorio vivo de:
+
 - Mejores prácticas en desarrollo web moderno
 - Optimización de performance sin comprometer experiencia
 - Diseño accesible y responsivo
@@ -104,6 +105,7 @@ Este proyecto consolidó mi expertise en:
 ## Por Qué Astro
 
 Elegí Astro porque:
+
 - **Performance first:** Island architecture es game-changer
 - **Content-focused:** Excelente para portfolios y blogs
 - **Flexibility:** Puede usar React, Vue, Svelte, Solid en mismo proyecto
