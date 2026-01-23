@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -10,7 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   output: "static",
   vite: {
-    plugins: [tsconfigPaths(), tailwindcss()],
+    plugins: [tailwindcss()],
   },
 
   site: "https://jorgejhms.net",
