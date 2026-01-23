@@ -21,8 +21,8 @@ const isEven = index % 2 === 0;
   <div class="relative w-full md:w-3/5">
     {
       data.image ? (
-        <a href={`/projects/${slug}`} class="block overflow-hidden rounded-lg">
-          <div class="bg-elevated/50 relative aspect-[16/10] overflow-hidden transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-primary/10">
+        <div class="overflow-hidden rounded-lg">
+          <div class="bg-elevated/50 group-hover:shadow-primary/10 relative aspect-[16/10] overflow-hidden transition-all duration-500 group-hover:shadow-2xl">
             <img
               src={data.image}
               alt={`Screenshot of ${data.title}`}
@@ -31,30 +31,40 @@ const isEven = index % 2 === 0;
             />
             {/* Overlay Gradient */}
             <div class="from-background/20 to-background/5 absolute inset-0 bg-gradient-to-t mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />
-            
+
             {/* Tech Decoration (Cyberpunk Corner) */}
-            <div class={`absolute -bottom-1 -right-1 h-8 w-8 border-r-2 border-b-2 border-primary/50 transition-all duration-300 group-hover:h-12 group-hover:w-12 group-hover:border-primary ${!isEven ? "right-auto left-0 md:-left-1 md:border-r-0 md:border-l-2" : ""}`} />
+            <div
+              class={`border-primary/50 group-hover:border-primary absolute -right-1 -bottom-1 h-8 w-8 border-r-2 border-b-2 transition-all duration-300 group-hover:h-12 group-hover:w-12 ${!isEven ? "right-auto left-0 md:-left-1 md:border-r-0 md:border-l-2" : ""}`}
+            />
           </div>
-        </a>
+        </div>
       ) : (
         <div class="aspect-[16/10] w-full rounded-lg bg-white/5" />
       )
+    }
+    {
+      /* Previously: <a href={`/projects/${slug}`} class="block overflow-hidden rounded-lg"> - internal project link */
     }
   </div>
 
   <!-- Content Area -->
   <div class="flex flex-col md:w-2/5">
     <div class="mb-4 flex items-center gap-3">
-      <span class="text-primary font-mono text-xs font-bold tracking-widest uppercase">
+      <span
+        class="text-primary font-mono text-xs font-bold tracking-widest uppercase"
+      >
         Project_{String(data.order).padStart(2, "0")}
       </span>
       <div class="bg-primary/20 h-px w-12"></div>
     </div>
 
-    <h3 class="text-foreground mb-4 text-3xl font-bold leading-tight md:text-4xl">
-      <a href={`/projects/${slug}`} class="hover:text-primary transition-colors">
-        {data.title}
-      </a>
+    <h3
+      class="text-foreground mb-4 text-3xl leading-tight font-bold md:text-4xl"
+    >
+      <!-- Commented: Hide internal project link in title -->
+      <!-- <a href={`/projects/${slug}`} class="hover:text-primary transition-colors"> -->
+      {data.title}
+      <!-- </a> -->
     </h3>
 
     <p class="text-muted mb-6 text-base leading-relaxed md:text-lg">
@@ -62,7 +72,9 @@ const isEven = index % 2 === 0;
     </p>
 
     <!-- Minimal Tags -->
-    <div class="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-mono text-muted/80">
+    <div
+      class="text-muted/80 mb-8 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm"
+    >
       {
         data.technologies.map((tech, i) => (
           <span class="flex items-center gap-4">
@@ -77,24 +89,26 @@ const isEven = index % 2 === 0;
 
     <!-- Actions -->
     <div class="flex items-center gap-6">
-      <a
-        href={`/projects/${slug}`}
-        class="text-foreground hover:text-primary group/link flex items-center gap-2 border-b border-transparent pb-1 font-medium transition-all hover:border-primary"
-      >
-        Explore Project
-        <svg
-          class="h-4 w-4 transform transition-transform group-hover/link:translate-x-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
+      <!-- Commented: Hide internal "Explore Project" link -->
+      <!-- <a -->
+      <!--   href={`/projects/${slug}`} -->
+      <!--   class="text-foreground hover:text-primary group/link flex items-center gap-2 border-b border-transparent pb-1 font-medium transition-all hover:border-primary" -->
+      <!-- > -->
+      <!--   Explore Project -->
+      <!--   <svg -->
+      <!--     class="h-4 w-4 transform transition-transform group-hover/link:translate-x-1" -->
+      <!--     fill="none" -->
+      <!--     viewBox="0 0 24 24" -->
+      <!--     stroke="currentColor" -->
+      <!--   > -->
+      <!--     <path -->
+      <!--       stroke-linecap="round" -->
+      <!--       stroke-linejoin="round" -->
+      <!--       stroke-width="2" -->
+      <!--       d="M17 8l4 4m0 0l-4 4m4-4H3"></path> -->
+      <!--     /> -->
+      <!--   </svg> -->
+      <!-- </a> -->
 
       {
         data.liveUrl && (

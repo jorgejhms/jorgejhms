@@ -32,24 +32,20 @@ const allProjects = projects.sort((a, b) => a.data.order - b.data.order);
         ))
       }
 
-      <!-- Show All Projects Link (treated as a final item in the flow) -->
-      {
-        allProjects.length > featuredProjects.length && (
-          <div class="group flex flex-col items-start justify-center py-12 md:py-24">
-            <a
-              href="/projects"
-              class="flex items-center gap-6 text-2xl font-bold md:text-5xl"
-            >
-              <span class="text-muted group-hover:text-primary transition-colors duration-300">
-                Ver todos los proyectos
-              </span>
-              <span class="text-primary group-hover:translate-x-4 transition-transform duration-300">
-                →
-              </span>
-            </a>
-          </div>
-        )
-      }
+      <!-- Commented: Hide "Ver más proyectos" link -->
+      <!-- <div class="group flex flex-col items-start justify-center py-12 md:py-24"> -->
+      <!--   <a -->
+      <!--     href="/projects" -->
+      <!--     class="flex items-center gap-6 text-2xl font-bold md:text-5xl" -->
+      <!--   > -->
+      <!--     <span class="text-muted group-hover:text-primary transition-colors duration-300"> -->
+      <!--       Ver todos los proyectos -->
+      <!--     </span> -->
+      <!--     <span class="text-primary group-hover:translate-x-4 transition-transform duration-300"> -->
+      <!--       → -->
+      <!--     </span> -->
+      <!--   </a> -->
+      <!-- </div> -->
     </div>
   </div>
 </section>
