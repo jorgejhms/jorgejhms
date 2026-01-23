@@ -1,9 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
-import Button from "./Button.astro";
 import SectionHeader from "./SectionHeader.astro";
-import TerminalWindow from "./TerminalWindow.astro";
 
 const projects = await getCollection("projects");
 const featuredProjects = projects
@@ -15,7 +13,7 @@ const allProjects = projects.sort((a, b) => a.data.order - b.data.order);
 
 <section
   id="projects"
-  class="section-spacing bg-elevated/20 -mx-6 md:-mx-12"
+  class="section-spacing relative"
   aria-labelledby="projects-heading"
 >
   <div class="container mx-auto px-6 md:px-12">
@@ -26,36 +24,32 @@ const allProjects = projects.sort((a, b) => a.data.order - b.data.order);
       description="Experimentación con frameworks modernos, flujos de datos y diseño accesible orientado a performance. Cada proyecto está documentado con foco en arquitectura y tooling."
     />
 
-    <!-- Featured Projects Grid -->
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {featuredProjects.map((project) => <ProjectCard project={project} />)}
-    </div>
+    <!-- Featured Projects Stack -->
+    <div class="mt-16 flex flex-col gap-24 md:gap-32">
+      {
+        featuredProjects.map((project, index) => (
+          <ProjectCard project={project} index={index} />
+        ))
+      }
 
-    <!-- Show All Projects Button -->
-    {
-      allProjects.length > featuredProjects.length && (
-        <div class="text-center">
-          <Button href="/experience" variant="outline" size="lg" class="group">
-            <svg
-              class="mr-2 h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+      <!-- Show All Projects Link (treated as a final item in the flow) -->
+      {
+        allProjects.length > featuredProjects.length && (
+          <div class="group flex flex-col items-start justify-center py-12 md:py-24">
+            <a
+              href="/projects"
+              class="flex items-center gap-6 text-2xl font-bold md:text-5xl"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-              />
-            </svg>
-            Ver todos los proyectos
-            <span class="text-muted ml-2 font-mono">
-              ({allProjects.length - featuredProjects.length} más)
-            </span>
-          </Button>
-        </div>
-      )
-    }
+              <span class="text-muted group-hover:text-primary transition-colors duration-300">
+                Ver todos los proyectos
+              </span>
+              <span class="text-primary group-hover:translate-x-4 transition-transform duration-300">
+                →
+              </span>
+            </a>
+          </div>
+        )
+      }
+    </div>
   </div>
 </section>
