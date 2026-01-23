@@ -90,50 +90,50 @@ const socialLinks = [
         ))
       }
     </div>
-  </div>
 
-  <!-- Mobile Menu Button -->
-  <button
-    id="mobile-menu-button"
-    class="text-foreground hover:text-primary hover:bg-elevated/50 rounded-md p-2 transition-colors md:hidden"
-    aria-label="Abrir menú de navegación"
-    aria-expanded="false"
-  >
-    <svg
-      id="menu-icon"
-      class="block h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-button"
+      class="neon-text-cyan hover:text-primary hover:bg-elevated/50 rounded-md p-2 transition-colors md:hidden"
+      aria-label="Abrir menú de navegación"
+      aria-expanded="false"
     >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-    <svg
-      id="close-icon"
-      class="hidden h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M6 18L18 6M6 6l12 12"></path>
-    </svg>
-  </button>
+      <svg
+        id="menu-icon"
+        class="block h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <svg
+        id="close-icon"
+        class="hidden h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
 </nav>
 
 <!-- Mobile Menu -->
 <div
   id="mobile-menu"
-  class="bg-background/95 border-border mx-6 mt-4 -translate-y-full transform rounded-lg border backdrop-blur-md transition-transform duration-300 ease-in-out md:hidden"
+  class="bg-background/60 border-border fixed inset-x-0 top-0 -translate-y-[150%] transform rounded-b-lg border-x border-b backdrop-blur-xl transition-transform duration-300 ease-in-out md:hidden"
 >
-  <div class="space-y-6 px-6 py-6">
+  <div class="space-y-4 px-6 pt-20 pb-6">
     <!-- Commented: Hide mobile navigation links -->
     <!-- <nav class="space-y-4"> -->
     <!--   { -->
@@ -150,8 +150,8 @@ const socialLinks = [
     <!-- </nav> -->
 
     <!-- Mobile Social Links -->
-    <div class="border-border border-t pt-6">
-      <div class="text-muted mb-3 font-mono text-sm">
+    <div class="border-border border-t pt-4">
+      <div class="text-muted mb-2 font-mono text-sm">
         <span class="text-primary">$</span> social --connect
       </div>
       <div class="flex gap-4">
@@ -181,7 +181,7 @@ const socialLinks = [
     </div>
 
     <!-- Terminal Status -->
-    <div class="border-border border-t pt-4">
+    <div class="border-border border-t pt-3">
       <div class="text-muted/60 font-mono text-xs">
         <span class="text-success">●</span> Navigation online
         <span class="mx-2">|</span>
@@ -273,10 +273,7 @@ const socialLinks = [
 <style>
   /* Ensure mobile menu is above other content */
   #mobile-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    z-index: 40;
   }
 
   /* Add subtle hover effects */
