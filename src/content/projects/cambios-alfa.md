@@ -1,6 +1,6 @@
 ---
 title: "Cambios Alfa"
-description: "Plataforma fintech de cambio de divisas con análisis de datos real-time. Demuestra expertise en sistemas financieros, compliance, y visualización de datos complejos."
+description: "Plataforma fintech de cambio de divisas. Desarrollada en Astro y desplegada en Railway, garantizando una experiencia fluida y segura para usuarios y operaciones."
 technologies: ["Astro", "TypeScript", "React", "Tailwind CSS", "D3.js"]
 liveUrl: "https://cambiosalfa.pe"
 githubUrl: "https://github.com/jorgejhms/cambios-alfa"

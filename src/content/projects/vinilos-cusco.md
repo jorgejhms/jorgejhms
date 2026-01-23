@@ -1,7 +1,7 @@
 ---
 title: "Vinilos Cusco"
-description: "Tienda de e-commerce especializada en vinilos, tornamesas y equipos de audio. Mi negocio personal que demuestra capacidad de identificar oportunidades de mercado y construir productos rentables."
-technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Cloudflare", "Railway"]
+description: "Tienda de e-commerce especializada en vinilos, tornamesas y equipos de audio. Mi negocio personal desarrollado con Astro y con despliegue en Cloudflare Workers, R2 y D1 para almacenamiento y base de datos."
+technologies: ["Astro", "TypeScript", "Tailwind CSS", "Cloudflare", ]
 liveUrl: "https://viniloscusco.pe"
 githubUrl: "https://github.com/jorgejhms/vinilos-cusco"
 image: "./img/vinilos-cusco.png"

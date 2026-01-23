@@ -1,6 +1,6 @@
 ---
 title: "Delili"
-description: "Plataforma SaaS educativa + e-commerce para literatura infantil interactiva. Demuestra capacidad fullstack avanzada en sistemas complejos."
+description: "Plataforma personal y e-commerce para literatura infantil interactiva. Proyecto en continuo desarrollo"
 technologies: ["Next.js", "TypeScript", "PostgreSQL", "React", "Tailwind CSS"]
 liveUrl: "https://delili.pe"
 githubUrl: "https://github.com/jorgejhms/delili"
