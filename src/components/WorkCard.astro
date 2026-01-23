@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import Button from "./Button.astro";
+import Button from "@components/Button.astro";
 
 // Use a more generic interface that covers the experience collection data
 export interface Props {
@@ -86,7 +86,10 @@ const badgeColors = [
       {
         tags.map((tag, index) => (
           <li
-            class={`rounded-full px-3 py-1.5 transition-all duration-200 hover:scale-105 ${badgeColors[index % badgeColors.length]}`}
+            class:list={[
+              "rounded-full px-3 py-1.5 transition-all duration-200 hover:scale-105",
+              badgeColors[index % badgeColors.length],
+            ]}
           >
             {tag}
           </li>
