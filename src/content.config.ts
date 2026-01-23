@@ -83,16 +83,17 @@ const site = defineCollection({
 
 const projects = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    technologies: z.array(z.string()),
-    liveUrl: z.string().url().optional(),
-    githubUrl: z.string().url().optional(),
-    image: z.string().optional(),
-    featured: z.boolean().default(false),
-    order: z.number().default(0),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      technologies: z.array(z.string()),
+      liveUrl: z.string().url().optional(),
+      githubUrl: z.string().url().optional(),
+      image: image().optional(),
+      featured: z.boolean().default(false),
+      order: z.number().default(0),
+    }),
 });
 
 const skills = defineCollection({

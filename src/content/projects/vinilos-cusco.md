@@ -4,7 +4,7 @@ description: "Tienda de e-commerce especializada en vinilos, tornamesas y equipo
 technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Cloudflare", "Railway"]
 liveUrl: "https://viniloscusco.pe"
 githubUrl: "https://github.com/jorgejhms/vinilos-cusco"
-image: "/projects/vinilos-cusco.webp"
+image: "./img/vinilos-cusco.png"
 featured: true
 order: 1
 ---

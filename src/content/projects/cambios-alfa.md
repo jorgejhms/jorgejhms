@@ -4,7 +4,7 @@ description: "Plataforma fintech de cambio de divisas con análisis de datos rea
 technologies: ["Astro", "TypeScript", "React", "Tailwind CSS", "D3.js"]
 liveUrl: "https://cambiosalfa.pe"
 githubUrl: "https://github.com/jorgejhms/cambios-alfa"
-image: "/projects/cambios-alfa.webp"
+image: "./img/cambios-alfa.png"
 featured: true
 order: 3
 ---

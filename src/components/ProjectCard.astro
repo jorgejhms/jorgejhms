@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
 
 export interface Props {
@@ -22,21 +23,18 @@ const isEven = index % 2 === 0;
     {
       data.image ? (
         <div class="overflow-hidden rounded-lg">
-          <div class="bg-elevated/50 group-hover:shadow-primary/10 relative aspect-[16/10] overflow-hidden transition-all duration-500 group-hover:shadow-2xl">
-            <img
-              src={data.image}
-              alt={`Screenshot of ${data.title}`}
-              class="h-full w-full object-cover transition-transform duration-700 will-change-transform group-hover:scale-105"
-              loading="lazy"
-            />
-            {/* Overlay Gradient */}
-            <div class="from-background/20 to-background/5 absolute inset-0 bg-gradient-to-t mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />
-
-            {/* Tech Decoration (Cyberpunk Corner) */}
-            <div
-              class={`border-primary/50 group-hover:border-primary absolute -right-1 -bottom-1 h-8 w-8 border-r-2 border-b-2 transition-all duration-300 group-hover:h-12 group-hover:w-12 ${!isEven ? "right-auto left-0 md:-left-1 md:border-r-0 md:border-l-2" : ""}`}
-            />
-          </div>
+          <Image
+            src={data.image}
+            alt={`Screenshot of ${data.title}`}
+            width={data.image.width}
+            height={data.image.height}
+            loading="lazy"
+          />
+          <div class="from-background/20 to-background/5 absolute inset-0 bg-gradient-to-t mix-blend-multiply transition-opacity duration-500 group-hover:opacity-0" />
+          {/* Tech Decoration (Cyberpunk Corner) */}
+          <div
+            class={`border-primary/50 group-hover:border-primary absolute -right-1 -bottom-1 h-8 w-8 border-r-2 border-b-2 transition-all duration-300 group-hover:h-12 group-hover:w-12 ${!isEven ? "right-auto left-0 md:-left-1 md:border-r-0 md:border-l-2" : ""}`}
+          />
         </div>
       ) : (
         <div class="aspect-[16/10] w-full rounded-lg bg-white/5" />

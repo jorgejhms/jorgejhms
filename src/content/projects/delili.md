@@ -4,7 +4,7 @@ description: "Plataforma SaaS educativa + e-commerce para literatura infantil in
 technologies: ["Next.js", "TypeScript", "PostgreSQL", "React", "Tailwind CSS"]
 liveUrl: "https://delili.pe"
 githubUrl: "https://github.com/jorgejhms/delili"
-image: "/projects/delili.webp"
+image: "./img/de-lili.png"
 featured: true
 order: 2
 ---

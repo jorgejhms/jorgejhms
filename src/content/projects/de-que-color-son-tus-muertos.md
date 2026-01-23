@@ -4,7 +4,6 @@ description: "Plataforma documental interactiva sobre desapariciones forzadas. P
 technologies: ["Astro", "TypeScript", "Mapbox", "D3.js", "Tailwind CSS"]
 liveUrl: "https://dequecolorsontusmuertos.pe"
 githubUrl: "https://github.com/jorgejhms/de-que-color-son-tus-muertos"
-image: "/projects/de-que-color.webp"
 featured: false
 order: 4
 ---
