@@ -1,10 +1,10 @@
 name: "Jorge Meneses"
 username: "jorgejhms"
-title: "Senior Full-Stack Engineer"
+title: "Desarrollador Full-Stack"
 bio: "Senior Full-Stack Engineer specializing in building production web applications with Next.js, Astro, and TypeScript. Expertise in data visualization and analytics dashboards."
-heroDescription: "Construyo aplicaciones web modernas, escalables y de alto rendimiento. Especializado en Next.js, Astro y dashboards de análisis de datos. Fundador de Vinilos Cusco con 4K+ usuarios mensuales."
-motto: "Performance-first development. Bringing ideas to life with code."
-email: "jorge@jorgejhms.net"
+heroDescription: "Construyo aplicaciones web modernas, escalables y de alto rendimiento. Con experiencia frontend en React (Next.js, Remix) y Astro, backend Python (FastAPI), R y bases de datos relacionales (SQL)"
+motto: ""
+email: "jorgejhms@gmail.com"
 
 availability:
   status: "available"
