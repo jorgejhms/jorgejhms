@@ -2,15 +2,15 @@ name: "Jorge Meneses"
 username: "jorgejhms"
 title: "Desarrollador Full-Stack"
 bio: "Senior Full-Stack Engineer specializing in building production web applications with Next.js, Astro, and TypeScript. Expertise in data visualization and analytics dashboards."
-heroDescription: "Construyo aplicaciones web modernas, escalables y de alto rendimiento. Con experiencia frontend en React (Next.js, Remix) y Astro, backend Python (FastAPI), R y bases de datos relacionales (SQL). También experiencia con despligue en Vercel, Cloudflare, GCloud y VPS."
+heroDescription: "Desarrollo aplicaciones web modernas, escalables y de alto rendimiento. Experiencia en frontend con React (Next.js, Remix) y Astro, backend con Python (FastAPI), R y bases de datos relacionales (SQL). También experiencia en despliegue en Vercel, Cloudflare, Google Cloud y VPS."
 motto: ""
 email: "jorgejhms@gmail.com"
 
 availability:
   status: "available"
-  message: "Disponible para nuevos proyectos"
+  message: "Buscando nuevos proyectos"
   responseTime: "< 24h"
-  responseText: "Escribe directamente o conéctame en redes. Respondo en menos de 24h."
+  responseText: "Escribe directamente o contáctame por redes. Respondo en menos de 24h."
 
 socials:
   github:
@@ -51,8 +51,8 @@ services:
 
 ctas:
   - href: "#projects"
-    label: "Ver proyectos"
+    label: "Ver mis proyectos"
     icon: "arrow-right"
   - href: "#contact"
-    label: "Contactar"
+    label: "Contáctame"
     icon: "mail"
