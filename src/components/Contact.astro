@@ -1,6 +1,6 @@
 ---
-import Button from "./Button.astro";
-import SectionHeader from "./SectionHeader.astro";
+import Button from "@components/Button.astro";
+import SectionHeader from "@components/SectionHeader.astro";
 import { getCollection } from "astro:content";
 
 const siteData = (await getCollection("site"))[0].data;
