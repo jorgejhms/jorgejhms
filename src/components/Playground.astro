@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import SectionHeader from "@components/SectionHeader.astro";
+import SectionHeader from "./SectionHeader.astro";
 
 // Get all playground items
 const playgroundItems = await getCollection("playground");
@@ -21,7 +21,7 @@ const featured = sorted.filter((item) => item.data.featured === true);
       title=""
       highlight="Playground"
       description="Experimentos técnicos y demostraciones de skills"
-      neonColor="green"
+      neonColor="secondary"
     />
 
     <div class="grid grid-cols-1 gap-8">
@@ -29,7 +29,7 @@ const featured = sorted.filter((item) => item.data.featured === true);
         featured.map((item) => (
           <div class="group border-secondary/30 bg-surface hover:border-secondary/50 hover:shadow-secondary/20 relative overflow-hidden rounded-lg border transition-all hover:shadow-lg">
             {/* Decorative top border */}
-            <div class="from-secondary via-accent to-primary absolute top-0 left-0 h-1 w-full bg-linear-to-r opacity-0 transition-opacity group-hover:opacity-100" />
+            <div class="from-secondary via-accent to-primary absolute top-0 left-0 h-1 w-full bg-gradient-to-r opacity-0 transition-opacity group-hover:opacity-100" />
 
             <div class="flex flex-col md:flex-row">
               {/* Content side */}

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import SectionHeader from "@components/SectionHeader.astro";
+import SectionHeader from "./SectionHeader.astro";
 
 const skillsData = await getCollection("skills");
 const sortedSkills = skillsData.sort((a, b) => a.data.order - b.data.order);
