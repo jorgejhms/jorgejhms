@@ -1,6 +1,6 @@
 ---
-import Button from "./Button.astro";
-import SectionHeader from "./SectionHeader.astro";
+import Button from "@components/Button.astro";
+import SectionHeader from "@components/SectionHeader.astro";
 import { getCollection } from "astro:content";
 
 const siteData = (await getCollection("site"))[0].data;
@@ -41,11 +41,13 @@ const availability = siteData.availability;
       <!-- Integrated availability as subtle inline badge -->
       <div class="mb-6 inline-flex items-center gap-2 font-mono text-sm">
         <span
-          class={`h-2 w-2 rounded-full ${
-            availability.status === "available"
-              ? "bg-success animate-pulse"
-              : "bg-warning"
-          }`}></span>
+          class:list={[
+            "h-2 w-2 rounded-full",
+            {
+              "bg-success animate-pulse": availability.status === "available",
+              "bg-warning": availability.status !== "available",
+            },
+          ]}></span>
         <span class="text-success">{availability.message}</span>
         <span class="text-muted text-xs">· {availability.responseTime}</span>
       </div>

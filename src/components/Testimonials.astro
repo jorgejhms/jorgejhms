@@ -1,5 +1,5 @@
 ---
-import SectionHeader from "./SectionHeader.astro";
+import SectionHeader from "@components/SectionHeader.astro";
 
 interface Testimonial {
   name: string;
@@ -61,7 +61,7 @@ const testimonials: Testimonial[] = [
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    class="from-primary to-accent h-12 w-12 flex-shrink-0 rounded-full bg-gradient-to-br"
+                    class="from-primary to-accent h-12 w-12 shrink-0 rounded-full bg-linear-to-br"
                   />
                 )}
                 <div class="min-w-0">

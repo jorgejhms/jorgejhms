@@ -30,9 +30,12 @@
 
 ### Imports
 
-- Use relative imports for local components: `import Button from "./Button.astro"`
+- Use import aliases for cleaner imports:
+  - Components: `import Button from "@components/Button.astro"`
+  - Layouts: `import Base from "@layouts/base.astro"`
+  - Content: `import { getCollection } from "astro:content"`
 - Tailwind CSS v4 is used for styling (not SCSS)
-- Content collections imported via `getCollection("collectionName")`
+- Import aliases configured in tsconfig.json: `@components/*`, `@layouts/*`, `@content/*`
 
 ### Formatting
 
